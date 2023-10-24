@@ -41,3 +41,6 @@ Using Python and Flask, create a web-based workout generator application with a 
 - **Contingency** : Acknowledging the unpredictability of illnesses and emergent situations, we aim to build redundancy into our team roles. Should a team member be unavailable, another team member will assume those responsibilities ensuring uninterrupted progress.
 
 - **Avoidance** : Given the early stage of our product concept, we may adjust our overall goal during its development; however, we plan to maintain a well-defined product vision and implement and test our MVP early to avoid making significant modifications later in the development process.
+
+## System Context Model
+![System Context Model](https://github.com/rohitmit98/InfiniFit/assets/51212933/ac0d063d-2f71-49fb-8fe9-a81e3c471800)
