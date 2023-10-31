@@ -1,0 +1,25 @@
+.home-container {
+  text-align: center;
+  margin-top: 20%;
+}
+
+.welcome-text {
+  font-family: 'Arial', sans-serif;  /* or any font you prefer */
+  color: #3d3d3d;  /* change to your preferred color */
+  font-size: 4em;
+}
+
+.sign-up-button {
+  font-size: 1em;
+  padding: 10px 20px;
+  background-color: #353535; /* change to your preferred button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sign-up-button:hover {
+  background-color: #767676;
+}
