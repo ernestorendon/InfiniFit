@@ -3,9 +3,7 @@ import './RegistrationForm.css'; // Import the CSS file
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
-    username: '',
-    firstName: '',
-    lastName: '',
+    email: '',
     password: '',
     confirmPassword: '',
   });
@@ -29,31 +27,11 @@ const RegistrationForm = () => {
       {/* <h1>Registration Form</h1> */}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Username:</label>
+          <label>Email:</label>
           <input
             type="text"
-            name="username"
+            name="email"
             value={formData.username}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>First Name:</label>
-          <input
-            type="text"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>Last Name:</label>
-          <input
-            type="text"
-            name="lastName"
-            value={formData.lastName}
             onChange={handleChange}
             required
           />
