@@ -1,4 +1,5 @@
-from tables import UserAccount
+from flask import jsonify, request, Flask
+from tables import UserAccount, security_questions
 from app import app, db
 from security import hash_password, generate_salt, verify_password
 
