@@ -1,0 +1,6 @@
+Flask
+Flask-WTF
+Flask-SQLAlchemy
+WTForms
+psycopg2
+pycryptodome
