@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './RegistrationForm.css'; // Import the CSS file
 
 const securityQuestions = {
@@ -18,6 +19,9 @@ const RegistrationForm = () => {
     securityQuestion: '',
     securityAnswer: '',
   });
+
+  // instantiate navigation using react router dom
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -42,14 +46,22 @@ const RegistrationForm = () => {
           securityAnswer: formData.securityAnswer,
         }),
       })
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Registration failed');
+        }
+        return response.json();
+      })
       .then(data => {
         if (data.message) {
           alert(data.message);
+          // Redirect to the login page on successful registration
+          navigate('/login');
         }
       })
       .catch(error => {
         console.error('Error:', error);
+        alert('Failed to register. Please try again.');
       });
     }
   };

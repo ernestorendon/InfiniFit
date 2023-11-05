@@ -9,6 +9,11 @@ function Home() {
       <Link to="/register" style={{ textDecoration: 'none' }}>
         <button className="sign-up-button">Sign Up</button>
       </Link>
+        <div>
+      <Link to="/login" style={{ textDecoration: 'none' }}>
+        <button className="sign-up-button">Log In</button>
+      </Link>
+        </div>
     </div>
   );
 }
