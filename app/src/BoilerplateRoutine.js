@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-const FullBodyRoutine = () => {
+const BoilerplateRoutine = () => {
   const [exercises, setExercises] = useState([]);
+  const { routineName } = useParams(); // This will match the dynamic segment of the URL
 
   useEffect(() => {
-    // change this to fetch('http://localhost:5000/{routine}') where {routine} catches the user click of 1 of 4 boilerplate routines
-    fetch('http://localhost:5000/full_body_routine')
+  const routineUrl = `http://127.0.0.1:5000/${routineName}`; // Construct the URL based on the routine name
+    fetch(routineUrl)
       .then(response => response.json())
       .then(data => {
         // Initialize state for each set of each exercise
@@ -14,13 +16,14 @@ const FullBodyRoutine = () => {
           sets: Array.from({ length: exercise.sets }, () => ({
             started: false,
             reps: exercise.reps,
-            clickedOnce: false, // Add this line
+            clickedOnce: false,
           })),
         }));
         setExercises(exercisesWithState);
       })
       .catch(error => console.error('Error:', error));
-  }, []);
+  }, [routineName]); // Re-run the effect if routineName changes
+
 
    const handleSetClick = (exerciseIndex, setIndex) => {
     setExercises(currentExercises => {
@@ -83,4 +86,4 @@ const FullBodyRoutine = () => {
   );
 };
 
-export default FullBodyRoutine;
+export default BoilerplateRoutine;

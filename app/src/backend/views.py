@@ -8,6 +8,9 @@ register_blueprint = Blueprint('register_blueprint', __name__)
 
 
 # Define your routes here, for example:
+
+
+# REGISTRATION ROUTE
 @register_blueprint.route('/register', methods=['POST'])
 def register():
     # Get data from request
@@ -39,18 +42,7 @@ def register():
         return jsonify({'message': 'User registered successfully'}), 201
 
 
-@register_blueprint.route('/full_body_routine')
-def full_body_routine():
-    routine = [
-        {"exercise": "Air Squats", "sets": 3, "reps": 20},
-        {"exercise": "Pushups", "sets": 3, "reps": 10},
-        {"exercise": "Situps", "sets": 3, "reps": 20},
-        {"exercise": "Walking Lunges", "sets": 3, "reps": 10},
-        {"exercise": "Mountain Climbers", "sets": 3, "reps": 20},
-    ]
-    return jsonify(routine)
-
-
+# LOGIN ROUTE
 @register_blueprint.route('/login', methods=['POST'])
 def login_screen():
     # Get data from request
@@ -71,3 +63,28 @@ def login_screen():
     else:
         # Return an error message
         return jsonify({'message': 'Login failed'}), 401
+
+
+# BOILER PLATE ROUTINE ROUTES
+@register_blueprint.route('/full_body_routine')
+def full_body_routine():
+    routine = [
+        {"exercise": "Air Squats", "sets": 3, "reps": 20},
+        {"exercise": "Pushups", "sets": 3, "reps": 10},
+        {"exercise": "Situps", "sets": 3, "reps": 20},
+        {"exercise": "Walking Lunges", "sets": 3, "reps": 10},
+        {"exercise": "Mountain Climbers", "sets": 3, "reps": 20},
+    ]
+    return jsonify(routine)
+
+
+@register_blueprint.route('/core_routine')
+def core_routine():
+    routine = [
+        {"exercise": "Crunches", "sets": 2, "reps": 10},
+        {"exercise": "Flutter Kicks", "sets": 5, "reps": 30},
+        {"exercise": "Situps", "sets": 3, "reps": 15},
+        {"exercise": "Leg Raises", "sets": 4, "reps": 10},
+        {"exercise": "Plank", "sets": 3, "reps": 20},
+    ]
+    return jsonify(routine)
