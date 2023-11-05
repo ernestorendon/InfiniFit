@@ -29,9 +29,31 @@ const RegistrationForm = () => {
     if (formData.password !== formData.confirmPassword) {
       alert('Password and confirmation do not match.');
     } else {
-      console.log('Form data submitted:', formData);
+      // Send the POST request to the Flask backend
+      fetch('http://127.0.0.1:5000/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+          securityQuestion: formData.securityQuestion,
+          securityAnswer: formData.securityAnswer,
+        }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.message) {
+          alert(data.message);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
     }
   };
+
 
   return (
     <div className="registration-form">
@@ -98,5 +120,7 @@ const RegistrationForm = () => {
     </div>
   );
 };
+
+
 
 export default RegistrationForm;

@@ -20,8 +20,4 @@ def verify_password(stored_hash, input_password, salt):
     return input_hash == stored_hash
 
 
-def convert_db_hash_to_bytes(db_salt_str):
-    # Remove the PostgreSQL bytea escape character '\' and convert to a byte string.
-    return bytes.fromhex(db_salt_str.replace("\\x", ""))
-
 # Any other security-related functions or constants can go here
