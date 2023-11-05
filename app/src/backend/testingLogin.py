@@ -1,5 +1,5 @@
 from flask import jsonify, request, Flask
-from tables import UserAccount, security_questions
+from tables import UserAccount, securityQuestions
 from app import app, db
 from security import hash_password, generate_salt, verify_password
 
@@ -55,4 +55,3 @@ if __name__ == '__main__':
     test_insert_user()
     email = 'test@example.com'
     password = 'test'
-    test_login(email, password)
