@@ -4,6 +4,7 @@ import Home from './Home';
 import RegistrationForm from './RegistrationForm';
 import BoilerplateRoutine from "./BoilerplateRoutine";
 import LoginScreen from "./LoginScreen";
+import Dashboard from "./Dashboard";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/register" element={<RegistrationForm />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/:routineName" element={<BoilerplateRoutine />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );
