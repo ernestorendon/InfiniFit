@@ -77,12 +77,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-top: 20px;
 }
 
 .info-block {
   width: 100%;
   max-width: 300px;
-  margin: 20px;
+  margin: 20px auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -113,6 +114,7 @@
   }
 
   .info-block {
-    width: 100%;
+    width: calc(100% - 40px); /* Adjust width for smaller screens */
+    margin: 10px; /* Adjust margin for smaller screens */
   }
 }

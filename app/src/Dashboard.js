@@ -1,11 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Dashboard.css'; // Import your CSS file for styling
 
 const Dashboard = () => {
+  const navigate = useNavigate(); // Hook to enable programmatic navigation
+
   // Function to handle dropdown toggle
   const toggleDropdown = () => {
     const content = document.querySelector('.dropdown-content');
     content.style.display = content.style.display === 'block' ? 'none' : 'block';
+  };
+
+  // Function to handle clicking on 'Select Routine'
+  const handleSelectRoutineClick = () => {
+    navigate('/bprselection'); // Route to BPRSelection page
   };
 
   return (
@@ -36,7 +44,7 @@ const Dashboard = () => {
       <section className="info">
         <div className="info-block">
           <h3>Choose a Boilerplate Routine</h3>
-          <button className="green-button">Select Routine</button>
+          <button className="green-button" onClick={handleSelectRoutineClick}>Select Routine</button>
         </div>
 
         <div className="info-block">
