@@ -20,51 +20,74 @@ const RegistrationForm = () => {
     securityAnswer: '',
   });
 
+  const [errors, setErrors] = useState({});
+
   // instantiate navigation using react router dom
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
-      alert('Password and confirmation do not match.');
-    } else {
-      // Send the POST request to the Flask backend
-      fetch('http://127.0.0.1:5000/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: formData.email,
-          password: formData.password,
-          securityQuestion: formData.securityQuestion,
-          securityAnswer: formData.securityAnswer,
-        }),
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Registration failed');
-        }
-        return response.json();
-      })
-      .then(data => {
-        if (data.message) {
-          alert(data.message);
-          // Redirect to the login page on successful registration
-          navigate('/login');
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('Failed to register. Please try again.');
-      });
+
+    // Start with an empty errors object
+    let newErrors = {};
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simplified regex for example purposes
+    if (!emailRegex.test(formData.email)) {
+      // Set an error state for email
+      newErrors.email = 'Please enter a valid email address.';
     }
+
+        // Password match validation
+    if (formData.password !== formData.confirmPassword) {
+      // Set an error state for password confirmation
+      newErrors.confirmPassword = 'Password and confirmation do not match.';
+    }
+
+    // If there are any errors, set them in the state and don't submit the form
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return; // Stop the form submission
+    }
+
+
+    // If there are no errors, continue with form submission
+    fetch('http://127.0.0.1:5000/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: formData.email,
+        password: formData.password,
+        securityQuestion: formData.securityQuestion,
+        securityAnswer: formData.securityAnswer,
+      }),
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Registration failed');
+      }
+      return response.json();
+    })
+    .then(data => {
+      if (data.message) {
+        alert(data.message);
+        navigate('/login'); // Redirect to the login page on successful registration
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Failed to register. Please try again.');
+    });
   };
+
 
 
   return (
@@ -80,6 +103,7 @@ const RegistrationForm = () => {
             onChange={handleChange}
             required
           />
+          {errors.email && <div className="error">{errors.email}</div>}
         </div>
         <div className="form-group">
           <label>Password:</label>
