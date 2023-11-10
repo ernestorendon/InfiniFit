@@ -1,34 +1,60 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Dashboard.css'; // Import your CSS file for styling
 
 const Dashboard = () => {
+  const navigate = useNavigate(); // Hook to enable programmatic navigation
+
+  // Function to handle dropdown toggle
+  const toggleDropdown = () => {
+    const content = document.querySelector('.dropdown-content');
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+  };
+
+  // Function to handle clicking on 'Select Routine'
+  const handleSelectRoutineClick = () => {
+    navigate('/bprselection'); // Route to BPRSelection page
+  };
+
   return (
     <div className="landing-page">
       <header className="header">
-        <h1>Welcome to Our Mobile Site</h1>
+        <h1>InfiniFit</h1>
+        <div className="dropdown">
+          <button className="dropbtn" onClick={toggleDropdown}>
+            <div className="hamburger-icon">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </button>
+          <div className="dropdown-content">
+            <a href="#profile">Profile</a> {/* You can add your link here */}
+          </div>
+        </div>
       </header>
 
       <section className="hero">
         <div className="hero-content">
-          <h2>Your Mobile Landing Page</h2>
-          <p>Discover what we have to offer on your mobile device.</p>
+          <h2>Maximize Your Fitness Journey</h2>
+          <p>Discover personalized workouts and achieve your goals.</p>
         </div>
       </section>
 
       <section className="info">
         <div className="info-block">
-          <h3>Feature 1</h3>
-          <p>Learn about our amazing feature.</p>
+          <h3>Choose a Boilerplate Routine</h3>
+          <button className="green-button" onClick={handleSelectRoutineClick}>Select Routine</button>
         </div>
 
         <div className="info-block">
-          <h3>Feature 2</h3>
-          <p>Explore another fantastic feature.</p>
+          <h3>Create a Custom Routine</h3>
+          <button className="green-button">Create Routine</button>
         </div>
       </section>
 
       <footer className="footer">
-        <p>&copy; 2023 Your Company Name</p>
+        <p>&copy; 2023 InfiniFit</p>
       </footer>
     </div>
   );
