@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import './RegistrationForm.css'; // Import the CSS file
+import './RegistrationForm.css';
+import {useNavigate} from "react-router-dom"; // Import the CSS file
+
 
 const LoginScreen = () => {
   // Initialize the form data state
@@ -8,6 +10,9 @@ const LoginScreen = () => {
     password: ''
   });
   const [loginSuccess, setSuccessMessage] = useState('');
+
+  // instantiate navigation using react router dom
+  const navigate = useNavigate();
 
 
   // Handle form submission
@@ -31,6 +36,7 @@ const LoginScreen = () => {
         // Login was successful
         console.log('Login successful:', data);
         setSuccessMessage('Login Successful!');
+        navigate('/dashboard');
         // You can redirect the user to another page or update the state accordingly
       } else {
         // Handle errors (e.g., user not found, wrong password, etc.)
