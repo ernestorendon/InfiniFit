@@ -81,10 +81,33 @@ def full_body_routine():
 @register_blueprint.route('/core_routine')
 def core_routine():
     routine = [
-        {"exercise": "Crunches", "sets": 2, "reps": 10},
-        {"exercise": "Flutter Kicks", "sets": 5, "reps": 30},
-        {"exercise": "Situps", "sets": 3, "reps": 15},
-        {"exercise": "Leg Raises", "sets": 4, "reps": 10},
-        {"exercise": "Plank", "sets": 3, "reps": 20},
+        {"exercise": "Crunches", "sets": 3, "reps": 20},
+        {"exercise": "Flutter Kicks", "sets": 3, "reps": 20},
+        {"exercise": "Situps", "sets": 3, "reps": 20},
+        {"exercise": "Leg Raises", "sets": 3, "reps": 20},
+        {"exercise": "Plank", "sets": 3, "reps": 30},
+    ]
+    return jsonify(routine)
+
+
+@register_blueprint.route('/upper_body_routine')
+def upper_body_routine():
+    routine = [
+        {"exercise": "Pushups", "sets": 3, "reps": 20},
+        {"exercise": "Bench Dips", "sets": 3, "reps": 20},
+        {"exercise": "Pike Pushups", "sets": 3, "reps": 20},
+        {"exercise": "Supermans", "sets": 3, "reps": 20},
+    ]
+    return jsonify(routine)
+
+
+@register_blueprint.route('/lower_body_routine')
+def lower_body_routine():
+    routine = [
+        {"exercise": "Air Squats", "sets": 3, "reps": 20},
+        {"exercise": "Calf Raises", "sets": 3, "reps": 30},
+        {"exercise": "Walking Lunges", "sets": 3, "reps": 20},
+        {"exercise": "Lying Glute Bridges", "sets": 3, "reps": 20},
+        {"exercise": "Jump Squat", "sets": 3, "reps": 20},
     ]
     return jsonify(routine)

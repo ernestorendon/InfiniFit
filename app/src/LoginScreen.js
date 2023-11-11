@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import './RegistrationForm.css';
-import {useNavigate} from "react-router-dom"; // Import the CSS file
+import {useNavigate} from "react-router-dom";
+import AuthContext from "./AuthContext"; // Import the CSS file
 
 
 const LoginScreen = () => {
+
   // Initialize the form data state
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   });
   const [loginSuccess, setSuccessMessage] = useState('');
+
+  const { setUser } = useContext(AuthContext);
 
   // instantiate navigation using react router dom
   const navigate = useNavigate();
@@ -36,8 +40,13 @@ const LoginScreen = () => {
         // Login was successful
         console.log('Login successful:', data);
         setSuccessMessage('Login Successful!');
+        // Define userData based on the response
+        // Adjust this according to the actual response structure
+        const userData = data.user;
+
+        setUser(userData); // Update the global user state
         navigate('/dashboard');
-        // You can redirect the user to another page or update the state accordingly
+
       } else {
         // Handle errors (e.g., user not found, wrong password, etc.)
         console.error('Login failed:', data.message);

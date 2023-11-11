@@ -11,6 +11,13 @@ class UserAccount(db.Model):
     security_answer = db.Column(db.String(100), nullable=False)
 
 
+class UserPreferences(db.Model):
+    __tablename__ = 'user_preferences'
+    level = db.Column(db.String, primary_key=True)
+    time = db.Column(db.String(100), nullable=False)
+    muscle_group = db.Column(db.String(100), nullable=False)
+
+
 class Workout(db.Model):
     __tablename__ = 'workouts'
     id = db.Column(db.Integer, primary_key=True)
