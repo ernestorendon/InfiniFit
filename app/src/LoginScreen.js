@@ -40,9 +40,13 @@ const LoginScreen = () => {
         // Login was successful
         console.log('Login successful:', data);
         setSuccessMessage('Login Successful!');
-        // Define userData based on the response
-        // Adjust this according to the actual response structure
-        const userData = data.user;
+
+        // Use the email from the formData as the user identifier
+        const userData = {
+          email: formData.email
+          // Add other user details here if your backend sends them
+        };
+
 
         setUser(userData); // Update the global user state
         navigate('/dashboard');
