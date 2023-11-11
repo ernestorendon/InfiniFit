@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Dashboard.css'; // Import your CSS file for styling
+import AuthContext from './AuthContext'; // Adjust the path as needed
+import './Dashboard.css';
+
+
 
 const Dashboard = () => {
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate(); // Hook to enable programmatic navigation
 
   // Function to handle dropdown toggle
@@ -20,6 +24,7 @@ const Dashboard = () => {
     <div className="landing-page">
       <header className="header">
         <h1>InfiniFit</h1>
+        {user && <div className="user-greeting">Welcome, {user.name}</div>}
         <div className="dropdown">
           <button className="dropbtn" onClick={toggleDropdown}>
             <div className="hamburger-icon">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-const BoilerplateRoutine = () => {
+const BoilerplateRender = () => {
   const [exercises, setExercises] = useState([]);
   const { routineName } = useParams(); // This will match the dynamic segment of the URL
 
@@ -86,4 +86,4 @@ const BoilerplateRoutine = () => {
   );
 };
 
-export default BoilerplateRoutine;
+export default BoilerplateRender;
