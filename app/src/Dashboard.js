@@ -2,18 +2,13 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from './AuthContext'; // Adjust the path as needed
 import './Dashboard.css';
+import Navbar from './Navbar'; // Import the Navbar component
+
 
 
 
 const Dashboard = () => {
-  const { user } = useContext(AuthContext);
   const navigate = useNavigate(); // Hook to enable programmatic navigation
-
-  // Function to handle dropdown toggle
-  const toggleDropdown = () => {
-    const content = document.querySelector('.dropdown-content');
-    content.style.display = content.style.display === 'block' ? 'none' : 'block';
-  };
 
   // Function to handle clicking on 'Select Routine'
   const handleSelectRoutineClick = () => {
@@ -22,22 +17,8 @@ const Dashboard = () => {
 
   return (
     <div className="landing-page">
-      <header className="header">
-        <h1>InfiniFit</h1>
-        {user && <div className="user-greeting">Welcome, {user.name}</div>}
-        <div className="dropdown">
-          <button className="dropbtn" onClick={toggleDropdown}>
-            <div className="hamburger-icon">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </button>
-          <div className="dropdown-content">
-            <a href="#profile">Profile</a> {/* You can add your link here */}
-          </div>
-        </div>
-      </header>
+      <Navbar /> {/* Include the Navbar component */}
+
 
       <section className="hero">
         <div className="hero-content">

@@ -4,72 +4,14 @@
     padding: 10px;
     text-align: center;
   }
-  
-  .header {
-    background-color: #448546;
-    color: white;
-    padding: 20px;
-    position: relative;
-  }
-  
-  .dropdown {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-  }
-  
-  .dropbtn {
-    background-color: #448546;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .hamburger-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 25px;
-    width: 35px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .hamburger-icon div {
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    transition: all 0.3s;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
+
   .info {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 20px; /* Consistent with the dashboard's top margin */
   }
-  
+
   .info-block {
     width: 100%;
     max-width: 300px; /* Adjust the max-width to control block size */
@@ -80,11 +22,11 @@
     cursor: pointer; /* Indicates you can click on the block */
     transition: background-color 0.3s ease;
   }
-  
+
   .info-block:hover {
     background-color: #f7f7f7; /* Slight highlight on hover */
   }
-  
+
   /* Responsive design for smaller screens */
   @media (max-width: 768px) {
     .info-block {
@@ -92,4 +34,3 @@
       margin: 10px; /* Adjust margin for smaller screens */
     }
   }
-  

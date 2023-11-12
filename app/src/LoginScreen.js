@@ -47,8 +47,9 @@ const LoginScreen = () => {
           // Add other user details here if your backend sends them
         };
 
-
+        localStorage.setItem('user', JSON.stringify(userData));
         setUser(userData); // Update the global user state
+        console.log('set successful:', userData);
         navigate('/dashboard');
 
       } else {
