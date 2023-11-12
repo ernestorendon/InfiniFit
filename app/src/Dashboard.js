@@ -29,6 +29,11 @@ const Dashboard = () => {
 
       <section className="info">
         <div className="info-block">
+          <h3>Generate Workout Routine</h3>
+          <button className="green-button">Generate Routine</button>
+        </div>
+
+        <div className="info-block">
           <h3>Choose a Boilerplate Routine</h3>
           <button className="green-button" onClick={handleSelectRoutineClick}>Select Routine</button>
         </div>
@@ -36,6 +41,11 @@ const Dashboard = () => {
         <div className="info-block">
           <h3>Create a Custom Routine</h3>
           <button className="green-button">Create Routine</button>
+        </div>
+
+        <div className="info-block">
+          <h3>Load Saved Workout</h3>
+          <button className="green-button">Load Routine</button>
         </div>
       </section>
 
