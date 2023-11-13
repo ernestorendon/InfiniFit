@@ -32,7 +32,6 @@ const Navbar = () => {
     }
   };
 
-
     document.addEventListener('mousedown', handleOutsideClick);
     return () => {
       // Clean up the event listener when the component unmounts
@@ -69,9 +68,9 @@ const Navbar = () => {
           </div>
         </button>
         <div className="dropdown-content" ref={dropdownRef}>
+          <button className="btn dashboardbtn" onClick={handleDashboardClick}>Dashboard</button>
           <button className="btn settingbtn" onClick={handleSettingsClick}>Settings</button>
           <button className="btn logoutbtn" onClick={handleLogoutClick}>Logout</button>
-          <button className="btn dashboardbtn" onClick={handleDashboardClick}>Dashboard</button>
         </div>
       </div>
     </header>
