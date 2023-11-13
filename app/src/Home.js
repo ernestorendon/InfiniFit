@@ -1,8 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import AuthContext from './AuthContext'; // Adjust the path as needed
 import './Home.css'; // Importing the CSS file for styles
 
+
 function Home() {
+
+  const { user } = useContext(AuthContext); // Access the user from AuthContext
+  const navigate = useNavigate(); // Hook from React Router for navigation
+
+  // Check if user is authenticated
+  useEffect(() => {
+    if (user) {
+      navigate('/dashboard');
+    }
+  }, [user, navigate]);
+
   return (
     <div className="home-container">
       <header className="header">

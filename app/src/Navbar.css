@@ -55,8 +55,9 @@
 .btn {
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 8px 8px;
   margin-bottom: 8px;
+  margin-top: 0px;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 5px;
@@ -70,11 +71,10 @@
 
 .logoutbtn {
   background-color: #f44336; /* Red color for logout to make it stand out */
+  margin-bottom: 0px;
 }
 
 .dashboardbtn {
-  color: white;
-  margin: 0px;
 }
 
 
