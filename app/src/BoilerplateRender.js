@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Navbar from './Navbar';
+import './BoilerplateRender.css';
 
 const BoilerplateRender = () => {
   const [exercises, setExercises] = useState([]);
-  const { routineName } = useParams(); // This will match the dynamic segment of the URL
+  const { routineName } = useParams(); // This will match the  dynamic segment of the URL
 
   useEffect(() => {
-  const routineUrl = `http://127.0.0.1:5000/${routineName}`; // Construct the URL based on the routine name
+    const routineUrl = `http://127.0.0.1:5000/${routineName}`; // Construct the URL based on the routine name
     fetch(routineUrl)
       .then(response => response.json())
       .then(data => {
-        // Initialize state for each set of each exercise
         const exercisesWithState = data.map(exercise => ({
           ...exercise,
           sets: Array.from({ length: exercise.sets }, () => ({
@@ -61,27 +62,31 @@ const BoilerplateRender = () => {
   };
 
   return (
-    <div id="routine-container">
-      {exercises.map((exercise, exerciseIndex) => (
-        <div key={exerciseIndex} className="exercise">
-          <div className='exercise-header'>
-            {`${exercise.exercise} (Sets: ${exercise.sets.length}, Reps: ${exercise.reps})`}
+    <div className="landing-page">
+      <Navbar />
+
+      <div className="exercise-container">
+        {exercises.map((exercise, exerciseIndex) => (
+          <div key={exerciseIndex} className="exercise">
+            <div className='exercise-header'>
+              {`${exercise.exercise} (Sets: ${exercise.sets.length}, Reps: ${exercise.reps})`}
+            </div>
+            {exercise.sets.map((set, setIndex) => (
+              <button
+                key={setIndex}
+                className='set-button'
+                style={{
+                  backgroundColor: !set.started ? 'red' : set.firstClick ? 'green' : 'yellow',
+                  color: 'black',
+                }}
+                onClick={() => handleSetClick(exerciseIndex, setIndex)}
+              >
+                {`${set.reps}`}
+              </button>
+            ))}
           </div>
-          {exercise.sets.map((set, setIndex) => (
-            <button
-              key={setIndex}
-              className='set-button'
-              style={{
-                backgroundColor: !set.started ? 'red' : set.firstClick ? 'green' : 'yellow',
-                color: 'black', // Set font color to black
-              }}
-              onClick={() => handleSetClick(exerciseIndex, setIndex)}
-            >
-              {`${set.reps}`}
-            </button>
-          ))}
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

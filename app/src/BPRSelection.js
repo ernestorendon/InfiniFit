@@ -28,19 +28,19 @@ const BPRSelection = () => {
   const routines = {
     1: {
       name: 'Full Body Workout',
-      description: 'This is a brief description of the Full Body Workout routine.'
+      description: 'A dynamic routine targeting all major muscle groups with air squats, pushups, situps, walking lunges, and mountain climbers.'
     },
     2: {
       name: 'Core Routine',
-      description: 'This is a brief description of the Core Routine.'
+      description: 'Strengthen your core with a focused series of crunches, flutter kicks, situps, leg raises, and planks.'
     },
     3: {
       name: 'Upper Body Routine',
-      description: 'This is a brief description of the Upper Body Routine.'
+      description: 'Build upper body strength with pushups, bench dips, pike pushups, and supermans.'
     },
     4: {
       name: 'Lower Body Routine',
-      description: 'This is a brief description of the Lower Body Routine.'
+      description: 'Tone and strengthen your lower body with air squats, calf raises, walking lunges, lying glute bridges, and jump squats.'
     }
   };
 
