@@ -9,6 +9,9 @@ import BoilerplateEditor from "./BoilerplateEditor";
 import BPRSelection from "./BPRSelection";
 import LoginScreen from "./LoginScreen";
 import Dashboard from "./Dashboard";
+import Settings from './Settings';
+import MyRoutines from './MyRoutines';
+import CreateRoutine from './CreateRoutine';
 
 
 function App() {
@@ -32,6 +35,30 @@ function App() {
             element={
               <ProtectedRoute>
                 <BPRSelection />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <ProtectedRoute>
+                <Settings />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/my_routines"
+            element={
+              <ProtectedRoute>
+                <MyRoutines />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/create_routine"
+            element={
+              <ProtectedRoute>
+                <CreateRoutine />
               </ProtectedRoute>
             }
           />

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import './BoilerplateRender.css';
 
 const BoilerplateRender = () => {
   const [exercises, setExercises] = useState([]);
-  const { routineName } = useParams(); // This will match the  dynamic segment of the URL
+  const { routineName } = useParams(); // This will match the dynamic segment of the URL
+  const navigate = useNavigate(); // Initialize the useNavigate hook
 
   useEffect(() => {
     const routineUrl = `http://127.0.0.1:5000/${routineName}`; // Construct the URL based on the routine name
@@ -25,13 +26,14 @@ const BoilerplateRender = () => {
       .catch(error => console.error('Error:', error));
   }, [routineName]); // Re-run the effect if routineName changes
 
-
-   const handleSetClick = (exerciseIndex, setIndex) => {
+  const handleSetClick = (exerciseIndex, setIndex) => {
+    // Function to handle clicks on sets
     setExercises(currentExercises => {
       const newExercises = currentExercises.map((exercise, index) => {
         if (index === exerciseIndex) {
           const newSets = exercise.sets.map((set, sIndex) => {
             if (sIndex === setIndex) {
+              // Logic for handling set clicks
               // If the set hasn't been started yet, start it and turn it green
               if (!set.started) {
                 return { ...set, started: true, firstClick: true };
@@ -61,6 +63,11 @@ const BoilerplateRender = () => {
     });
   };
 
+  // Function to handle click on 'Save Progress' button
+  const handleSPClick = () => {
+    navigate(`/my_routines`);
+  };
+
   return (
     <div className="landing-page">
       <Navbar />
@@ -87,6 +94,13 @@ const BoilerplateRender = () => {
           </div>
         ))}
       </div>
+
+      <button 
+        className="SP-button" 
+        onClick={handleSPClick}
+      >
+        Save Progress
+      </button>
     </div>
   );
 };

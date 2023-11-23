@@ -1,0 +1,22 @@
+.my-routines-page {
+    padding: 0;
+    text-align: center;
+  }
+  
+  .routines-content {
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .routine-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .routines-content {
+      padding: 20px;
+    }
+  }
+  

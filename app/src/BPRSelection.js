@@ -3,7 +3,6 @@ import './BPRSelection.css'; // Import the CSS file
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar'; // Import the Navbar component
 
-
 const BPRSelection = () => {
   const navigate = useNavigate();
 
@@ -12,16 +11,16 @@ const BPRSelection = () => {
     console.log(`Routine ${routineId} selected`);
 
     if (routineId === 1) {
-      navigate('/full_body_routine');
+      navigate('/full_body_routine/edit');
     }
     else if (routineId === 2) {
-      navigate('/core_routine');
+      navigate('/core_routine/edit');
     }
     else if (routineId === 3) {
-      navigate('/upper_body_routine');
+      navigate('/upper_body_routine/edit');
     }
     else if (routineId === 4) {
-      navigate('/lower_body_routine');
+      navigate('/lower_body_routine/edit');
     }
   };
 
@@ -57,8 +56,6 @@ const BPRSelection = () => {
           </div>
         ))}
       </section>
-
-      {/* Footer, if necessary */}
 
     </div>
   );
