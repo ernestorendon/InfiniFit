@@ -71,6 +71,14 @@ const LoginScreen = () => {
   };
 
   return (
+
+    <div className="home-container">
+      <header className="header">
+        <a href="/" style={{ textDecoration: 'none' }}>
+         <h1 className="welcome-text">InfiniFit</h1>
+        </a>
+        {/* Other header elements like menu if needed */}
+      </header>
     <div className="registration-form">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
@@ -102,6 +110,7 @@ const LoginScreen = () => {
       </form>
       {loginSuccess && <p className="error-message">{loginSuccess}</p>}
     </div>
+   </div>
   );
 };
 

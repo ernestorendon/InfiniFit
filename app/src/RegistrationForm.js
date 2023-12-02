@@ -88,11 +88,16 @@ const RegistrationForm = () => {
     });
   };
 
-
-
   return (
+    <div className="home-container">
+      <header className="header">
+        <a href="/" style={{ textDecoration: 'none' }}>
+         <h1 className="welcome-text">InfiniFit</h1>
+        </a>
+        {/* Other header elements like menu if needed */}
+      </header>
     <div className="registration-form">
-      {/* <h1>Registration Form</h1> */}
+      <h1>Registration Form</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Email Address:</label>
@@ -124,6 +129,7 @@ const RegistrationForm = () => {
             onChange={handleChange}
             required
           />
+          {errors.confirmPassword && <div className="error">{errors.confirmPassword}</div>}
         </div>
         <div className="form-group">
           <label>Security Question:</label>
@@ -154,6 +160,7 @@ const RegistrationForm = () => {
         <button type="submit">Register</button>
       </form>
     </div>
+  </div>
   );
 };
 

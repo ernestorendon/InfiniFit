@@ -3,7 +3,6 @@ import './BPRSelection.css'; // Import the CSS file
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar'; // Import the Navbar component
 
-
 const BPRSelection = () => {
   const navigate = useNavigate();
 
@@ -12,35 +11,35 @@ const BPRSelection = () => {
     console.log(`Routine ${routineId} selected`);
 
     if (routineId === 1) {
-      navigate('/full_body_routine');
+      navigate('/full_body_routine/edit');
     }
     else if (routineId === 2) {
-      navigate('/core_routine');
+      navigate('/core_routine/edit');
     }
     else if (routineId === 3) {
-      navigate('/upper_body_routine');
+      navigate('/upper_body_routine/edit');
     }
     else if (routineId === 4) {
-      navigate('/lower_body_routine');
+      navigate('/lower_body_routine/edit');
     }
   };
 
   const routines = {
     1: {
       name: 'Full Body Workout',
-      description: 'This is a brief description of the Full Body Workout routine.'
+      description: 'A dynamic routine targeting all major muscle groups with air squats, pushups, situps, walking lunges, and mountain climbers.'
     },
     2: {
       name: 'Core Routine',
-      description: 'This is a brief description of the Core Routine.'
+      description: 'Strengthen your core with a focused series of crunches, flutter kicks, situps, leg raises, and planks.'
     },
     3: {
       name: 'Upper Body Routine',
-      description: 'This is a brief description of the Upper Body Routine.'
+      description: 'Build upper body strength with pushups, bench dips, pike pushups, and supermans.'
     },
     4: {
       name: 'Lower Body Routine',
-      description: 'This is a brief description of the Lower Body Routine.'
+      description: 'Tone and strengthen your lower body with air squats, calf raises, walking lunges, lying glute bridges, and jump squats.'
     }
   };
 
@@ -57,8 +56,6 @@ const BPRSelection = () => {
           </div>
         ))}
       </section>
-
-      {/* Footer, if necessary */}
 
     </div>
   );
