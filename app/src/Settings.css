@@ -1,0 +1,19 @@
+/* Settings.css */
+
+.landing-page {
+  padding: 0px;
+  text-align: center;
+}
+  
+  .settings-content {
+    padding: 40px;
+    text-align: center;
+    color: rgb(6, 6, 6);
+  }
+  
+  @media (max-width: 768px) {
+    .settings-content {
+      padding: 20px;
+    }
+  }
+  

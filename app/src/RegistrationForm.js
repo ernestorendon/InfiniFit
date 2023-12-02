@@ -97,7 +97,7 @@ const RegistrationForm = () => {
         {/* Other header elements like menu if needed */}
       </header>
     <div className="registration-form">
-      {/* <h1>Registration Form</h1> */}
+      <h1>Registration Form</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Email Address:</label>

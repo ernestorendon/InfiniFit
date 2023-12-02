@@ -4,9 +4,6 @@ import AuthContext from './AuthContext'; // Adjust the path as needed
 import './Dashboard.css';
 import Navbar from './Navbar'; // Import the Navbar component
 
-
-
-
 const Dashboard = () => {
   const navigate = useNavigate(); // Hook to enable programmatic navigation
 
@@ -14,11 +11,16 @@ const Dashboard = () => {
   const handleSelectRoutineClick = () => {
     navigate('/bprselection'); // Route to BPRSelection page
   };
+  const handleChooseRoutineClick = () => {
+    navigate('/my_routines');
+  };
+  const handleCreateRoutineClick = () => {
+    navigate('/create_routine');
+  };
 
   return (
     <div className="landing-page">
-      <Navbar /> {/* Include the Navbar component */}
-
+      <Navbar />
 
       <section className="hero">
         <div className="hero-content">
@@ -28,9 +30,15 @@ const Dashboard = () => {
       </section>
 
       <section className="info">
+
         <div className="info-block">
-          <h3>Generate Workout Routine</h3>
-          <button className="green-button">Generate Routine</button>
+          <h3>Load a Saved Routine</h3>
+          <button className="green-button" onClick={handleChooseRoutineClick}>Choose Routine</button>
+        </div>
+
+        <div className="info-block">
+          <h3>Create a Custom Routine</h3>
+          <button className="green-button" onClick={handleCreateRoutineClick}>Create Routine</button>
         </div>
 
         <div className="info-block">
@@ -39,14 +47,10 @@ const Dashboard = () => {
         </div>
 
         <div className="info-block">
-          <h3>Create a Custom Routine</h3>
-          <button className="green-button">Create Routine</button>
+          <h3>Generate Workout Routine</h3>
+          <button className="green-button">Generate Routine</button>
         </div>
 
-        <div className="info-block">
-          <h3>Load Saved Workout</h3>
-          <button className="green-button">Load Routine</button>
-        </div>
       </section>
 
       <footer className="footer">
