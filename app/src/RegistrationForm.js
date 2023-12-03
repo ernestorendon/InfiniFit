@@ -71,6 +71,9 @@ const RegistrationForm = () => {
         password: formData.password,
         securityQuestion: formData.securityQuestion,
         securityAnswer: formData.securityAnswer,
+        fitnessLevel: formData.fitnessLevel,
+        workoutDuration: formData.workoutDuration,
+        focusArea: formData.focusArea
       }),
     })
     .then(response => {
@@ -171,8 +174,8 @@ const RegistrationForm = () => {
             required
           >
             <option value="">Select your fitness level...</option>
-            <option value="beginner">Beginner</option>
-            <option value="intermediate">Intermediate</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
           </select>
         </div>
 
@@ -207,9 +210,9 @@ const RegistrationForm = () => {
         <div className="form-group">
           <label>Workout Duration (minutes):</label>
           <input
-            type="text"
-            name="workoutTime"
-            value={formData.workoutTime}
+            type="Integer"
+            name="workoutDuration"
+            value={formData.workoutDuration}
             onChange={handleChange}
             required
           />
