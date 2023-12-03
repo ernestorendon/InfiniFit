@@ -34,7 +34,10 @@ def register():
             hashed_password=hashed_pw,
             salt=salt,
             security_question=security_question_id,
-            security_answer=answer
+            security_answer=answer,
+            fitnessLevel=_fitnessLevel,
+            workoutDuration=_workoutDuration,
+            focusArea=_focusArea
         )
         db.session.add(new_user)
         db.session.commit()
