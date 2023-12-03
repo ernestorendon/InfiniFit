@@ -17,7 +17,7 @@ class UserAccount(db.Model):
 class Workout(db.Model):
     __tablename__ = 'workouts'
     email = db.Column(db.String(100), nullable=False)
-    id = db.Column(db.Integer, nullable=False)
+    id = db.Column(db.Integer, nullable=False, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     sets = db.Column(db.Integer, nullable=False)
     reps = db.Column(db.Integer, nullable=False)

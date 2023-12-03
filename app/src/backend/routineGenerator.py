@@ -3,110 +3,121 @@ import random
 from db_setup import db
 from tables import Workout
 
+
 def generate_routine(filepath, level, body_part, time, user_email):
     # Read the CSV file into a list of dictionaries
-    workouts = read_csv(filepath)
+    exercises = read_csv(filepath)
 
-    # Filter workouts based on user preferences
-    filtered_workouts = filter_workouts(workouts, level, body_part)
+    # Convert time from minutes to seconds and format parameters
+    time *= 60
+    level = level.title()
+    body_part = body_part.title()
 
-    # Generate routine by selecting workouts within the total time available
-    selected_workouts = select_workouts(filtered_workouts, time, body_part)
+    # Filter exercises based on user preferences
+    filtered_exercises = filter_exercises(exercises, level, body_part)
 
-    # Save selected workouts to the database or perform other actions as needed
-    save_workouts(selected_workouts, user_email)
+    # Generate routine by selecting exercises within the total time available
+    routine = select_exercises(filtered_exercises, time, body_part)
 
-    return selected_workouts
+    # Save selected exercises to the database or perform other actions as needed
+    #save_exercises(routine, user_email)
+
+    return routine
+
 
 def read_csv(filepath):
     # Read the CSV file into a list of dictionaries
-    workouts = []
+    exercises = []
     with open(filepath, 'r') as csv_file:
         reader = csv.DictReader(csv_file)
         for row in reader:
-            workouts.append(row)
-    return workouts
+            exercises.append(row)
+    return exercises
 
-def filter_workouts(workouts, level, body_part):
-    if body_part.title() == 'full_body':
-        # If body_part is 'full_body', include all workouts regardless of the body part
-        filtered_workouts = [
-            workout for workout in workouts if workout['Level'] == level
+
+def filter_exercises(exercises, level, body_part):
+    if body_part.lower() == 'full_body':
+        # If body_part is 'full_body', include all exercises of the preferred level
+        filtered_exercises = [
+            exercise for exercise in exercises if exercise['Level'] == level
         ]
     else:
-        # Filter workouts based on user preferences (level and specific body part)
-        filtered_workouts = [
-            workout for workout in workouts
-            if workout['Level'] == level and workout['BodyPart'] == body_part
+        # Otherwise, filter exercises by level and specific body part
+        filtered_exercises = [
+            exercise for exercise in exercises
+            if exercise['Level'] == level and exercise['BodyPart'] == body_part
         ]
 
-    return filtered_workouts
+    return filtered_exercises
 
-def select_workouts(filtered_workouts, total_time_available, body_part):
-    selected_workouts = []
-    total_time_spent = 0
 
-    workouts_by_body_part = {}
-    for workout in filtered_workouts:
-        workout_body_part = workout['BodyPart']
-        if workout_body_part not in workouts_by_body_part:
-            workouts_by_body_part[workout_body_part] = []
-        workouts_by_body_part[workout_body_part].append(workout)
+def select_exercises(filtered_exercises, total_time_available, body_part):
+    routine = []   # store chosen exercises
+    selected_titles = set()   # store titles to check for duplicates
+    total_time_spent = 0        # total time in seconds
+    exercises_by_body_part = set()       # store muscle groups to ensure full body scope
+    num_areas = 15      # total number of muscle groups
+    rest = 90       # rest time in seconds
 
-    if body_part.title() == 'full_body':
-        for _, available_workouts in workouts_by_body_part.items():
-            if not available_workouts:
-                continue
+    # Select exercises until all muscle groups or all unique titles have been included
+    while len(routine) <= num_areas and selected_titles != set(exercise['Title'] for exercise in filtered_exercises):
+        selected_exercise = random.choice(filtered_exercises)
+        exercise_time = int(selected_exercise['Time']) * int(selected_exercise['Sets']) * int(selected_exercise[selected_exercise['Level'][0] + '_Reps'])
 
-            selected_workout = random.choice(available_workouts)
-            workout_time = int(selected_workout['Time']) * int(selected_workout['Sets']) * int(selected_workout[selected_workout['Level'] + '_Reps'])
+        # Check if adding the exercise exceeds the total available time
+        if exercise_time + total_time_spent > total_time_available:
+            break
 
-            if total_time_spent + workout_time <= total_time_available:
-                selected_workouts.append({
-                    'title': selected_workout['Title'],
-                    'sets': int(selected_workout['Sets']),
-                    'reps': int(selected_workout[selected_workout['Level'] + '_Reps'])
+        if body_part.lower() == 'full_body':
+            # For full-body exercises, consider the avoid duplicate title and body parts
+            if selected_exercise['BodyPart'] not in exercises_by_body_part and selected_exercise[
+                "Title"] not in selected_titles:
+                routine.append({
+                    'title': selected_exercise['Title'],
+                    'sets': int(selected_exercise['Sets']),
+                    'reps': int(selected_exercise[selected_exercise['Level'][0] + '_Reps'])
                 })
-
-                total_time_spent += workout_time
-
-    else:
-        available_workouts = workouts_by_body_part.get(body_part, [])
-
-        for workout in available_workouts:
-            workout_time = int(workout['Time']) * int(workout['Sets']) * int(workout[workout['Level'] + '_Reps'])
-
-            if total_time_spent + workout_time <= total_time_available:
-                selected_workouts.append({
-                    'title': workout['Title'],
-                    'sets': int(workout['Sets']),
-                    'reps': int(workout[workout['Level'] + '_Reps'])
+                selected_titles.add(selected_exercise['Title'])
+                total_time_spent += exercise_time + rest
+                total_time_spent += (int(selected_exercise['Sets']) * rest)
+        else:
+            # For specific body part exercises, avoid duplicate titles
+            if selected_exercise["Title"] not in selected_titles:
+                routine.append({
+                    'title': selected_exercise['Title'],
+                    'sets': int(selected_exercise['Sets']),
+                    'reps': int(selected_exercise[selected_exercise['Level'][0] + '_Reps'])
                 })
+                selected_titles.add(selected_exercise['Title'])
+                total_time_spent += exercise_time + rest
+                total_time_spent += (int(selected_exercise['Sets']) * rest)
 
-                total_time_spent += workout_time
-
-    return selected_workouts
+    return routine
 
 
-def save_workouts(selected_workouts, user_email):
-    # user_email is used to associate the workout with a specific user
-    for workout_data in selected_workouts:
-        workout = Workout(
-            title=workout_data['title'],
-            sets=workout_data['sets'],
-            reps=workout_data['reps'],
+def save_exercises(routine, user_email):
+    # user_email is used to associate the exercise with a specific user
+    for exercise in routine:
+        exercise_entry = Workout(
+            title=exercise['title'],
+            sets=exercise['sets'],
+            reps=exercise['reps'],
             user_email=user_email
         )
-        db.session.add(workout)
+        db.session.add(exercise_entry)
 
     db.session.commit()
 
 
-
-# Example usage:
-level = 'beginner'
-body_part = 'full_body'
-time = 60
-filepath = 'path/dataset.csv'
-generated_routine = generate_routine(filepath, level, body_part, time, user_email)
-print(generated_routine)
+'''
+if __name__ == "__main__":
+    # Example usage:
+    user_email = 'test@test.com'
+    level = 'Intermediate'
+    body_part = 'Calves'
+    time = 60
+    filepath = '../includes/megaGymDataset.csv'
+    generated_routine = generate_routine(filepath, level, body_part, time, user_email)
+    print(generated_routine)
+    print(len(generated_routine))
+'''
