@@ -174,8 +174,8 @@ const RegistrationForm = () => {
             required
           >
             <option value="">Select your fitness level...</option>
-            <option value="beginner">Beginner</option>
-            <option value="intermediate">Intermediate</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
           </select>
         </div>
 
@@ -210,9 +210,10 @@ const RegistrationForm = () => {
         <div className="form-group">
           <label>Workout Duration (minutes):</label>
           <input
-            type="integer"
+            type="Integer"
             name="workoutDuration"
-            value={formData.Duration}
+            value={formData.workoutDuration}
+>>>>>>> 3bcae06ff9b6b3a9f5556735dd24904a1c7d16dd
             onChange={handleChange}
             required
           />
