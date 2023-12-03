@@ -19,6 +19,9 @@ def register():
     user_pass = data['password']
     security_question_id = int(data['securityQuestion'])  # Convert to int
     answer = data['securityAnswer']
+    _fitnessLevel = data['fitnessLevel']
+    _workoutDuration = data['workoutDuration']
+    _focusArea = data['focusArea']
 
     # Here you would check if the email already exists and if not, add the user to the table
     # For example:

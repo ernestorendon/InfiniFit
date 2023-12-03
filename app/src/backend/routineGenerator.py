@@ -28,7 +28,7 @@ def read_csv(filepath):
     return workouts
 
 def filter_workouts(workouts, level, body_part):
-    if body_part.lower() == 'full_body':
+    if body_part.title() == 'full_body':
         # If body_part is 'full_body', include all workouts regardless of the body part
         filtered_workouts = [
             workout for workout in workouts if workout['Level'] == level
@@ -53,7 +53,7 @@ def select_workouts(filtered_workouts, total_time_available, body_part):
             workouts_by_body_part[workout_body_part] = []
         workouts_by_body_part[workout_body_part].append(workout)
 
-    if body_part.lower() == 'full_body':
+    if body_part.title() == 'full_body':
         for _, available_workouts in workouts_by_body_part.items():
             if not available_workouts:
                 continue
@@ -100,6 +100,8 @@ def save_workouts(selected_workouts, user_email):
         db.session.add(workout)
 
     db.session.commit()
+
+
 
 # Example usage:
 level = 'beginner'

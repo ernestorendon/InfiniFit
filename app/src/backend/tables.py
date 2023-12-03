@@ -9,27 +9,18 @@ class UserAccount(db.Model):
     salt = db.Column(db.String(100), nullable=False)
     security_question = db.Column(db.String(100), nullable=False)
     security_answer = db.Column(db.String(100), nullable=False)
-
-
-class UserPreferences(db.Model):
-    __tablename__ = 'user_preferences'
-    level = db.Column(db.String, primary_key=True)
-    time = db.Column(db.String(100), nullable=False)
-    muscle_group = db.Column(db.String(100), nullable=False)
+    fitnessLevel = db.Column(db.String(100), nullable=False)
+    workoutDuration = db.Column(db.Integer, nullable=False)
+    focusArea = db.Column(db.String(100), nullable=False)
 
 
 class Workout(db.Model):
     __tablename__ = 'workouts'
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100))
-    type = db.Column(db.String(100))
-    body_part = db.Column(db.String(100))
-    level = db.Column(db.String(100))
-    time = db.Column(db.Integer)
-    sets = db.Column(db.Integer)
-    b_reps = db.Column(db.Integer)
-    i_reps = db.Column(db.Integer)
-
+    email = db.Column(db.String(100), nullable=False)
+    id = db.Column(db.Integer, nullable=False)
+    title = db.Column(db.String(100), nullable=False)
+    sets = db.Column(db.Integer, nullable=False)
+    reps = db.Column(db.Integer, nullable=False)
 
 securityQuestions = {
     1: "What city were you born in?",
