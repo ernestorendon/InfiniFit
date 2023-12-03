@@ -19,6 +19,9 @@ def register():
     user_pass = data['password']
     security_question_id = int(data['securityQuestion'])  # Convert to int
     answer = data['securityAnswer']
+    _fitnessLevel = data['fitnessLevel']
+    _workoutDuration = data['workoutDuration']
+    _focusArea = data['focusArea']
 
     # Here you would check if the email already exists and if not, add the user to the table
     # For example:
@@ -34,7 +37,10 @@ def register():
             hashed_password=hashed_pw,
             salt=salt,
             security_question=security_question_id,
-            security_answer=answer
+            security_answer=answer,
+            fitnessLevel=_fitnessLevel,
+            workoutDuration=_workoutDuration,
+            focusArea=_focusArea
         )
         db.session.add(new_user)
         db.session.commit()

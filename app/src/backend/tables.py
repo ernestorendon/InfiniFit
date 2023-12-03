@@ -9,13 +9,9 @@ class UserAccount(db.Model):
     salt = db.Column(db.String(100), nullable=False)
     security_question = db.Column(db.String(100), nullable=False)
     security_answer = db.Column(db.String(100), nullable=False)
-
-
-class UserPreferences(db.Model):
-    __tablename__ = 'user_preferences'
-    level = db.Column(db.String, primary_key=True)
-    time = db.Column(db.String(100), nullable=False)
-    muscle_group = db.Column(db.String(100), nullable=False)
+    fitnessLevel = db.Column(db.String(100), nullable=False)
+    workoutDuration = db.Column(db.Integer, nullable=False)
+    focusArea = db.Column(db.String(100), nullable=False)
 
 
 class Workout(db.Model):
