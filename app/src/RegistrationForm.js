@@ -18,6 +18,9 @@ const RegistrationForm = () => {
     confirmPassword: '',
     securityQuestion: '',
     securityAnswer: '',
+    fitnessLevel: '',
+    workoutDuration: '', 
+    focusArea: '' 
   });
 
   const [errors, setErrors] = useState({});
@@ -153,6 +156,47 @@ const RegistrationForm = () => {
             type="text"
             name="securityAnswer"
             value={formData.securityAnswer}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+
+        <div className="form-group">
+          <label>Current Fitness Level:</label>
+          <select
+            name="fitnessLevel"
+            value={formData.fitnessLevel}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select your fitness level...</option>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+          </select>
+        </div>
+
+        <div className="form-group">
+          <label>Focus Area:</label>
+          <select
+            name="focusArea"
+            value={formData.focusArea}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select a focus area...</option>
+            <option value="upper_body">Upper Body</option>
+            <option value="lower_body">Lower Body</option>
+            <option value="full_body">Full Body</option>
+          </select>
+        </div>
+
+        <div className="form-group">
+          <label>Workout Duration (minutes):</label>
+          <input
+            type="text"
+            name="workoutTime"
+            value={formData.workoutTime}
             onChange={handleChange}
             required
           />
