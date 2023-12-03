@@ -68,9 +68,22 @@ const Settings = () => {
               onBlur={handleBlur}
               autoFocus
             >
-              <option value="upper_body">Upper Body</option>
-              <option value="lower_body">Lower Body</option>
-              <option value="full_body">Full Body</option>
+              <option value="full body">Full Body</option>
+              <option value="abductors">Abductors</option>
+              <option value="adductors">Adductors</option>
+              <option value="biceps">Biceps</option>
+              <option value="calves">Calves</option>
+              <option value="chest">Chest</option>
+              <option value="core">Core</option>
+              <option value="glutes">Glutes</option>
+              <option value="hamstrings">Hamstrings</option>
+              <option value="lats">Lats</option>
+              <option value="lower back">Lower Back</option>
+              <option value="middle back">Middle Back</option>
+              <option value="neck">Neck</option>
+              <option value="quadriceps">Quadriceps</option>
+              <option value="shoulders">Shoulders</option>
+              <option value="triceps">Triceps</option>
             </select>
           ) : (
             <p onClick={() => toggleEdit('focusArea')}>{userSettings.focusArea}</p>
