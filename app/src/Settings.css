@@ -1,19 +1,24 @@
-/* Settings.css */
-
-.landing-page {
-  padding: 0px;
-  text-align: center;
+.setting-item {
+  margin: 20px;
+  cursor: pointer;
 }
-  
-  .settings-content {
-    padding: 40px;
-    text-align: center;
-    color: rgb(6, 6, 6);
-  }
-  
-  @media (max-width: 768px) {
-    .settings-content {
-      padding: 20px;
-    }
-  }
-  
+
+.setting-item p, .setting-item select, .setting-item input {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: white;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.setting-item select, .setting-item input {
+  cursor: text;
+}
+
+/* Adjust styles for edit mode */
+.setting-item select:focus, .setting-item input:focus {
+  outline: none;
+  border-color: #353535;
+}
