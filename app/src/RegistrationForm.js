@@ -213,7 +213,6 @@ const RegistrationForm = () => {
             type="Integer"
             name="workoutDuration"
             value={formData.workoutDuration}
->>>>>>> 3bcae06ff9b6b3a9f5556735dd24904a1c7d16dd
             onChange={handleChange}
             required
           />
