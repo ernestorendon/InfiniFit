@@ -52,7 +52,7 @@ def filter_exercises(exercises, level, body_part):
 
 
 def select_exercises(filtered_exercises, total_time_available, body_part):
-    routine = []   # store chosen exercises
+    routine = []   # store chosen exercises as a list of dictionaries
     selected_titles = set()   # store titles to check for duplicates
     total_time_spent = 0        # total time in seconds
     exercises_by_body_part = set()       # store muscle groups to ensure full body scope
@@ -69,9 +69,8 @@ def select_exercises(filtered_exercises, total_time_available, body_part):
             break
 
         if body_part.lower() == 'full_body':
-            # For full-body exercises, consider the avoid duplicate title and body parts
-            if selected_exercise['BodyPart'] not in exercises_by_body_part and selected_exercise[
-                "Title"] not in selected_titles:
+            # For full-body exercises, avoid duplicate title and body parts
+            if selected_exercise['BodyPart'] not in exercises_by_body_part and selected_exercise["Title"] not in selected_titles:
                 routine.append({
                     'title': selected_exercise['Title'],
                     'sets': int(selected_exercise['Sets']),
@@ -97,17 +96,16 @@ def select_exercises(filtered_exercises, total_time_available, body_part):
 
 def save_exercises(routine, user_email):
     # user_email is used to associate the exercise with a specific user
-    for exercise in routine:
+    for exercise_data in routine:
         exercise_entry = Workout(
-            title=exercise['title'],
-            sets=exercise['sets'],
-            reps=exercise['reps'],
+            title=exercise_data['title'],
+            sets=exercise_data['sets'],
+            reps=exercise_data['reps'],
             user_email=user_email
         )
         db.session.add(exercise_entry)
 
     db.session.commit()
-
 
 '''
 if __name__ == "__main__":
