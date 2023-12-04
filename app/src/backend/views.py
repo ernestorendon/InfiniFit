@@ -95,7 +95,6 @@ def core_routine():
     ]
     return jsonify(routine)
 
-
 @register_blueprint.route('/upper_body_routine')
 def upper_body_routine():
     routine = [

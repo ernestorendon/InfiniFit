@@ -16,16 +16,11 @@ class UserAccount(db.Model):
 
 class Workout(db.Model):
     __tablename__ = 'workouts'
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100))
-    type = db.Column(db.String(100))
-    body_part = db.Column(db.String(100))
-    level = db.Column(db.String(100))
-    time = db.Column(db.Integer)
-    sets = db.Column(db.Integer)
-    b_reps = db.Column(db.Integer)
-    i_reps = db.Column(db.Integer)
-
+    email = db.Column(db.String(100), nullable=False)
+    id = db.Column(db.Integer, nullable=False, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    sets = db.Column(db.Integer, nullable=False)
+    reps = db.Column(db.Integer, nullable=False)
 
 securityQuestions = {
     1: "What city were you born in?",
