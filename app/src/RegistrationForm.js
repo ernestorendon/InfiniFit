@@ -41,7 +41,7 @@ const RegistrationForm = () => {
     let newErrors = {};
 
     // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simplified regex for example purposes
+    const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/; // Simplified regex for example purposes
     if (!emailRegex.test(formData.email)) {
       // Set an error state for email
       newErrors.email = 'Please enter a valid email address.';
