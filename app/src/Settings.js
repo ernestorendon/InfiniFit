@@ -14,6 +14,7 @@ const Settings = () => {
   const userJson = localStorage.getItem('user');
   const userObj = JSON.parse(userJson);
   const userEmail = userObj.email;
+  const apiUrl = process.env.REACT_APP_API_URL || 'http://127.0.0.1:5000';
   // Placeholder state for user settings
   const [userSettings, setUserSettings] = useState({
     userEmail: userEmail,
@@ -54,7 +55,7 @@ const Settings = () => {
     toggleEdit(e.target.name);
   };
   const handleUpdateSettings = () => {
-    const updateUrl = 'http://127.0.0.1:5000/update_settings';
+    const updateUrl = `${apiUrl}/update_settings`;
 
     fetch(updateUrl, {
       method: 'POST',

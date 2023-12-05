@@ -18,7 +18,7 @@ const LoginScreen = () => {
 
   // instantiate navigation using react router dom
   const navigate = useNavigate();
-
+  const apiUrl = process.env.REACT_APP_API_URL || 'http://127.0.0.1:5000';
 
   // Handle form submission
   const handleSubmit = async (e) => {
@@ -26,7 +26,7 @@ const LoginScreen = () => {
 
     try {
       // Make a POST request to your Flask backend
-      const response = await fetch('http://127.0.0.1:5000/login', { // Replace '/login' with your Flask login route
+      const response = await fetch(`${apiUrl}/login`, { // Replace '/login' with your Flask login route
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
