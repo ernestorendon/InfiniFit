@@ -4,25 +4,38 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar'; // Import the Navbar component
 
 const BPRSelection = () => {
+  const userJson = localStorage.getItem('user');
+  const userObj = JSON.parse(userJson);
+  const userEmail = userObj.email;
   const navigate = useNavigate();
 
   // Function to handle routine selection (placeholder for navigation logic)
-  const selectRoutine = (routineId) => {
-    console.log(`Routine ${routineId} selected`);
+const selectRoutine = (routineId) => {
+  console.log(`Routine ${routineId} selected`);
 
-    if (routineId === 1) {
-      navigate('/full_body_routine/edit');
-    }
-    else if (routineId === 2) {
-      navigate('/core_routine/edit');
-    }
-    else if (routineId === 3) {
-      navigate('/upper_body_routine/edit');
-    }
-    else if (routineId === 4) {
-      navigate('/lower_body_routine/edit');
-    }
-  };
+  let routinePath;
+  switch (routineId) {
+    case 1:
+      routinePath = `/${userEmail}full_body_routine/edit`;
+      break;
+    case 2:
+      routinePath = `/${userEmail}core_routine/edit`;
+      break;
+    case 3:
+      routinePath = `/${userEmail}upper_body_routine/edit`;
+      break;
+    case 4:
+      routinePath = `/${userEmail}lower_body_routine/edit`;
+      break;
+    default:
+      // Handle default case or error
+      console.error('Invalid routineId:', routineId);
+      return;
+  }
+
+  navigate(routinePath);
+};
+
 
   const routines = {
     1: {

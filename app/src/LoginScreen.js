@@ -1,7 +1,8 @@
 import React, {useContext, useState} from 'react';
 import './RegistrationForm.css';
 import {useNavigate} from "react-router-dom";
-import AuthContext from "./AuthContext"; // Import the CSS file
+import AuthContext from "./AuthContext";
+import Navbar from "./Navbar"; // Import the CSS file
 
 
 const LoginScreen = () => {
@@ -73,12 +74,8 @@ const LoginScreen = () => {
   return (
 
     <div className="home-container">
-      <header className="header">
-        <a href="/" style={{ textDecoration: 'none' }}>
-         <h1 className="welcome-text">InfiniFit</h1>
-        </a>
-        {/* Other header elements like menu if needed */}
-      </header>
+      <Navbar />
+
     <div className="registration-form">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>

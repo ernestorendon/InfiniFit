@@ -65,7 +65,7 @@ const BoilerplateRender = () => {
 
   // Function to handle click on 'Save Progress' button
   const handleSPClick = () => {
-    navigate(`/my_routines`);
+    navigate(`/dashboard`);
   };
 
   return (
@@ -99,7 +99,7 @@ const BoilerplateRender = () => {
         className="SP-button" 
         onClick={handleSPClick}
       >
-        Save Progress
+        Finish Workout
       </button>
     </div>
   );

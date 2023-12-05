@@ -18,6 +18,10 @@ const Dashboard = () => {
     navigate('/create_routine');
   };
 
+  const handleGenerateRoutineClick = () => {
+    navigate('/generator');
+  };
+
   return (
     <div className="landing-page">
       <Navbar />
@@ -48,7 +52,7 @@ const Dashboard = () => {
 
         <div className="info-block">
           <h3>Generate Workout Routine</h3>
-          <button className="green-button">Generate Routine</button>
+          <button className="green-button" onClick={handleGenerateRoutineClick}>Generate Routine</button>
         </div>
 
       </section>

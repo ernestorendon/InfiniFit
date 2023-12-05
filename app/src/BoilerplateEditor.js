@@ -10,12 +10,13 @@ const BoilerplateEditor = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const routineUrl = `http://127.0.0.1:5000/${routeRoutineName}`;
+  let routineUrl;
+
+    routineUrl = `http://127.0.0.1:5000/${routeRoutineName}`;
     fetch(routineUrl)
       .then(response => response.json())
       .then(data => {
         setExercises(data);
-        setRoutineName(routeRoutineName); // Set the initial routine name
       })
       .catch(error => console.error('Error:', error));
   }, [routeRoutineName]);
@@ -30,12 +31,40 @@ const BoilerplateEditor = () => {
     }));
   };
 
-  const handleSaveRoutine = () => {
-    // new routine should be saved to data table and 
-    // app should automatically route to /my_routines to display the updated list of saved routines
-    console.log('Routine not saved:', { routineName, exercises });
-    navigate('/my_routines');
-  };
+const handleSaveRoutine = (callback = () => {}) => {
+  const updateUrl = `http://127.0.0.1:5000/update_routine/${routeRoutineName}`;
+
+  fetch(updateUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ exercises }),
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log('Routine updated:', data);
+    callback(); // Invoke the callback function
+  })
+  .catch(error => console.error('Error:', error));
+};
+
+
+const handleLaunchRoutine = () => {
+  handleSaveRoutine(() => {
+    navigate(`/${routeRoutineName}`);
+  });
+};
+
+const userJson = localStorage.getItem('user');
+const userObj = JSON.parse(userJson);
+const userEmail = userObj.email; // 'test@test.com'
+const newRoutineName = routeRoutineName.replace(userEmail, '');
 
   return (
     <div className="landing-page">
@@ -43,12 +72,7 @@ const BoilerplateEditor = () => {
 
       <div className="routine-name-editor">
         <h2>Customize and Save</h2>
-        <input 
-          type="text" 
-          value={routineName} 
-          onChange={(e) => setRoutineName(e.target.value)} 
-          placeholder="Edit Routine Name"
-        />
+        <h3>{newRoutineName}</h3>
       </div>
 
       <div className="exercise-container">
@@ -97,10 +121,15 @@ const BoilerplateEditor = () => {
         ))}
       </div>
       
-      <button className="save-button" onClick={handleSaveRoutine}>
-        Save Routine
+        <button className="save-button" onClick={() => handleSaveRoutine(() => navigate('/my_routines'))}>
+          Save
+        </button>
+        <div></div>
+      <button className="save-button" onClick={handleLaunchRoutine}>
+        Launch and Save
       </button>
     </div>
+
   );
 };
 
