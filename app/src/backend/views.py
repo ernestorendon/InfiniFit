@@ -252,6 +252,48 @@ def update_routine(routine_identifier):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+
+@register_blueprint.route('/add_routine', methods=['POST'])
+def add_routine():
+    try:
+        data = request.get_json()
+        new_routine = Workouts(
+            email=data['userEmail'],
+            id=data['userEmail'] + data['routineName'],  # Create a unique identifier
+            json_routine=json.dumps(data['exercises'])
+        )
+        db.session.add(new_routine)
+        db.session.commit()
+
+        return jsonify({'message': 'Routine added successfully'}), 200
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@register_blueprint.route('/update_settings', methods=['POST'])
+def update_settings():
+    try:
+        data = request.get_json()
+        user_email = data['userEmail']  # Replace with actual method to get the user's email
+
+        # Query for the specific user account
+        user_account = UserAccount.query.filter_by(email=user_email).first()
+
+        if user_account:
+            # Update user settings
+            user_account.fitnessLevel = data['fitnessLevel']
+            user_account.focusArea = data['focusArea']
+            user_account.workoutDuration = data['workoutDuration']
+            db.session.commit()
+
+            return jsonify({'message': 'Settings updated successfully'}), 200
+        else:
+            return jsonify({'error': 'User not found'}), 404
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 # if __name__ == '__main__':
 #     from app import app  # Import your Flask app instance
 #     from tables import Workouts  # Import your Workouts model
