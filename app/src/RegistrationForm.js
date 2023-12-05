@@ -27,6 +27,7 @@ const RegistrationForm = () => {
 
   // instantiate navigation using react router dom
   const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_API_URL || 'http://127.0.0.1:5000';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,7 +42,7 @@ const RegistrationForm = () => {
     let newErrors = {};
 
     // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simplified regex for example purposes
+    const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/; // Simplified regex for example purposes
     if (!emailRegex.test(formData.email)) {
       // Set an error state for email
       newErrors.email = 'Please enter a valid email address.';
@@ -61,7 +62,7 @@ const RegistrationForm = () => {
 
 
     // If there are no errors, continue with form submission
-    fetch('http://127.0.0.1:5000/register', {
+    fetch(`${apiUrl}/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
