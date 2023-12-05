@@ -27,11 +27,26 @@ const Settings = () => {
   const toggleEdit = (field) => {
     setEditMode({ ...editMode, [field]: !editMode[field] });
   };
+  // Error for negative workoutDuration
+  const [errorMessages, setErrorMessages] = useState({
+    workoutDuration: ''
+  });
+  
 
   // Handle changes in the edit form and exit edit mode
   const handleChange = (e) => {
+    if (e.target.name === 'workoutDuration') {
+      const value = e.target.value;
+      if (!/^\d*$/.test(value)) {
+        // Set error message and prevent state update
+        setErrorMessages({ ...errorMessages, workoutDuration: 'Please enter a positive number.' });
+        return;
+      } else {
+        // Clear error message when valid input is entered
+        setErrorMessages({ ...errorMessages, workoutDuration: '' });
+      }
+    }
     setUserSettings({ ...userSettings, [e.target.name]: e.target.value });
-    toggleEdit(e.target.name);
   };
 
   // Handle exiting edit mode when clicking outside
@@ -39,7 +54,7 @@ const Settings = () => {
     toggleEdit(e.target.name);
   };
   const handleUpdateSettings = () => {
-    const updateUrl = 'http://127.0.0.1:5000/update_settings'; // Replace with your actual backend endpoint
+    const updateUrl = 'http://127.0.0.1:5000/update_settings';
 
     fetch(updateUrl, {
       method: 'POST',
@@ -123,6 +138,7 @@ const Settings = () => {
         {/* Workout Time */}
         <div className="setting-item">
           {editMode.workoutDuration ? (
+            <>
             <input
               type="number"
               name="workoutDuration"
@@ -130,7 +146,10 @@ const Settings = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               autoFocus
+              min = "0"
             />
+            {errorMessages.workoutDuration && <div className="error-message">{errorMessages.workoutDuration}</div>}
+            </>
           ) : (
             <p onClick={() => toggleEdit('workoutDuration')}>{userSettings.workoutDuration}</p>
           )}
