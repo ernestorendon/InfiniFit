@@ -12,6 +12,7 @@ import Dashboard from "./Dashboard";
 import Settings from './Settings';
 import MyRoutines from './MyRoutines';
 import CreateRoutine from './CreateRoutine';
+import GeneratorForm from "./GeneratorForm";
 
 
 function App() {
@@ -75,6 +76,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <BoilerplateEditor />
+              </ProtectedRoute>
+            }
+          />
+            <Route
+            path="/generator"
+            element={
+              <ProtectedRoute>
+                <GeneratorForm />
               </ProtectedRoute>
             }
           />

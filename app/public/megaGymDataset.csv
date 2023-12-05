@@ -163,8 +163,8 @@ Side kick-through,Strength,Core,Intermediate,3,3,10,20
 Partner target sit-up,Strength,Core,Beginner,3,3,10,20
 Suspended Crunch,Strength,Core,Beginner,3,3,10,20
 Jump Lunge,Strength,Core,Intermediate,3,3,10,20
-Side plank hip dip,Strength,Core,Intermediate,1,0,30,60
-Elbow plank jack,Strength,Core,Intermediate,1,0,30,60
+Side plank hip dip,Strength,Core,Intermediate,1,1,30,60
+Elbow plank jack,Strength,Core,Intermediate,1,1,30,60
 Exercise ball V-up,Strength,Core,Intermediate,3,3,10,20
 Standing torso twist stretch,Strength,Core,Intermediate,3,3,10,20
 Bear crawl,Strength,Core,Intermediate,3,3,10,20
@@ -175,12 +175,12 @@ Shoulder tap,Strength,Core,Intermediate,3,3,10,20
 Double crunch,Strength,Core,Intermediate,3,3,10,20
 Flutter kick,Strength,Core,Intermediate,3,3,10,20
 Sprawl,Strength,Core,Intermediate,3,3,10,20
-Spider plank jack,Strength,Core,Intermediate,1,0,30,60
-Pillar-To-Plank,Strength,Core,Intermediate,1,0,30,60
+Spider plank jack,Strength,Core,Intermediate,1,1,30,60
+Pillar-To-Plank,Strength,Core,Intermediate,1,1,30,60
 Alternating High Knee Raise,Strength,Core,Intermediate,3,3,10,20
 Sumo Squat Pulse,Strength,Core,Intermediate,3,3,10,20
 Line-Drill Foot Work,Strength,Core,Intermediate,3,3,10,20
-Plank Fire Hydrants,Strength,Core,Intermediate,1,0,30,60
+Plank Fire Hydrants,Strength,Core,Intermediate,1,1,30,60
 Banded jumping jack,Strength,Core,Intermediate,3,3,10,20
 Shin hug,Strength,Core,Intermediate,3,3,10,20
 FYR Bear Crawl Fire Feet,Strength,Core,Intermediate,3,3,10,20
@@ -192,7 +192,7 @@ Single-leg V-up,Strength,Core,Intermediate,3,3,10,20
 FYR Bear Crawl Shoulder Tap,Strength,Core,Intermediate,3,3,10,20
 Alternating single-leg sprawl,Strength,Core,Intermediate,3,3,10,20
 Wide mountain climber,Strength,Core,Intermediate,3,3,10,20
-Plank leg raise,Strength,Core,Intermediate,1,0,30,60
+Plank leg raise,Strength,Core,Intermediate,1,1,30,60
 Glute bridge step-out,Strength,Core,Intermediate,3,3,10,20
 Knee up-down,Strength,Core,Intermediate,3,3,10,20
 FYR Sprawl,Strength,Core,Intermediate,3,3,10,20
@@ -206,7 +206,7 @@ Hollow-body abduction,Strength,Core,Intermediate,3,3,10,20
 FYR Hollow Hold,Strength,Core,Intermediate,3,3,10,20
 Tip-toe crunch,Strength,Core,Intermediate,3,3,10,20
 Knee-to-nose pulse,Strength,Core,Intermediate,3,3,10,20
-Plank walk-out,Strength,Core,Intermediate,1,0,30,60
+Plank walk-out,Strength,Core,Intermediate,1,1,30,60
 FYR V-Up,Strength,Core,Intermediate,3,3,10,20
 Long sit-up,Strength,Core,Intermediate,3,3,10,20
 FYR Breakdancer,Strength,Core,Intermediate,3,3,10,20
@@ -218,7 +218,7 @@ FYR Front Step,Strength,Core,Intermediate,3,3,10,20
 Plank reach,Strength,Core,Intermediate,3,3,10,20
 Eiffel Tower leg raise,Strength,Core,Intermediate,3,3,10,20
 Straight-arm plank,Strength,Core,Intermediate,3,3,10,20
-Plank up-down,Strength,Core,Intermediate,1,0,30,60
+Plank up-down,Strength,Core,Intermediate,1,1,30,60
 Frog kick,Strength,Core,Intermediate,3,3,10,20
 FYR Knees to Chest,Strength,Core,Intermediate,3,3,10,20
 Front kick-through,Strength,Core,Intermediate,3,3,10,20
@@ -236,7 +236,7 @@ Cross-body mountain climber,Strength,Core,Intermediate,3,3,10,20
 Flat Bench Lying Leg Raise - Gethin Variation,Strength,Core,Intermediate,3,3,10,20
 Lying leg lift,Strength,Core,Intermediate,3,3,10,20
 Hanging alternating single-leg raise,Strength,Core,Intermediate,3,3,10,20
-Plank Walk,Strength,Core,Intermediate,1,0,30,60
+Plank Walk,Strength,Core,Intermediate,1,1,30,60
 Sit-Up - Gethin Variation,Strength,Core,Intermediate,3,3,10,20
 Plank Push-Up,Strength,Core,Intermediate,3,3,10,20
 Decline crunch-,Strength,Core,Intermediate,3,3,10,20
@@ -254,21 +254,21 @@ Lateral ape,Strength,Core,Intermediate,3,3,10,20
 Hollow-body knee tuck,Strength,Core,Intermediate,3,3,10,20
 HM Air Jumping Rope,Strength,Core,Intermediate,3,3,10,20
 HM Alternating Lunge Reach,Strength,Core,Intermediate,3,3,10,20
-HM Alternating Side Plank Reach,Strength,Core,Intermediate,1,0,30,60
-HM Superman Plank,Strength,Core,Intermediate,1,0,30,60
-HM Table Pose,Strength,Core,Intermediate,1,0,30,60
+HM Alternating Side Plank Reach,Strength,Core,Intermediate,1,1,30,60
+HM Superman Plank,Strength,Core,Intermediate,1,1,30,60
+HM Table Pose,Strength,Core,Intermediate,1,1,30,60
 HM Toe Touch,Strength,Core,Intermediate,3,3,10,20
 HM Right Side Crunch,Strength,Core,Intermediate,3,3,10,20
 HM Bicycle,Strength,Core,Intermediate,3,3,10,20
-HM Bird-Dog Plank,Strength,Core,Intermediate,1,0,30,60
-HM Boat Pose,Strength,Core,Intermediate,1,0,30,60
-HM Bottoms Up,Strength,Core,Intermediate,1,0,30,60
-HM Bridge,Strength,Core,Intermediate,1,0,30,60
-HM Seated Twist,Strength,Core,Intermediate,1,0,30,60
-HM Side-Bend Pose,Strength,Core,Intermediate,1,0,30,60
-HM Side-Plank Arm Wrap,Strength,Core,Intermediate,1,0,30,60
-HM Side-Plank with Hip Touch,Strength,Core,Intermediate,1,0,30,60
-HM Side-Plank with Kick,Strength,Core,Intermediate,1,0,30,60
+HM Bird-Dog Plank,Strength,Core,Intermediate,1,1,30,60
+HM Boat Pose,Strength,Core,Intermediate,1,1,30,60
+HM Bottoms Up,Strength,Core,Intermediate,1,1,30,60
+HM Bridge,Strength,Core,Intermediate,1,1,30,60
+HM Seated Twist,Strength,Core,Intermediate,1,1,30,60
+HM Side-Bend Pose,Strength,Core,Intermediate,1,1,30,60
+HM Side-Plank Arm Wrap,Strength,Core,Intermediate,1,1,30,60
+HM Side-Plank with Hip Touch,Strength,Core,Intermediate,1,1,30,60
+HM Side-Plank with Kick,Strength,Core,Intermediate,1,1,30,60
 HM Side V-Up,Strength,Core,Intermediate,3,3,10,20
 HM Crab Crunch,Strength,Core,Intermediate,3,3,10,20
 HM Cross-Over Crunch,Strength,Core,Intermediate,3,3,10,20
@@ -294,10 +294,10 @@ HM Reverse Crunch,Strength,Core,Intermediate,3,3,10,20
 HM Low Lunge With External Twist And Arm Reach,Strength,Core,Intermediate,3,3,10,20
 HM Mountain Climber,Strength,Core,Intermediate,3,3,10,20
 HM Prison Sit-Up,Strength,Core,Intermediate,3,3,10,20
-HM Plank Alternating Hip-Dip,Strength,Core,Intermediate,1,0,30,60
+HM Plank Alternating Hip-Dip,Strength,Core,Intermediate,1,1,30,60
 HM Tuck-Up Get-Up,Strength,Core,Intermediate,3,3,10,20
 HM Flutter Kick,Strength,Core,Intermediate,3,3,10,20
-HM Plank,Strength,Core,Intermediate,1,0,30,60
+HM Plank,Strength,Core,Intermediate,1,1,30,60
 McGill Pull-Up,Strength,Core,Intermediate,3,3,10,20
 AM Leg Lift,Strength,Core,Intermediate,3,3,10,20
 AM Decline Abs,Strength,Core,Intermediate,3,3,10,20
@@ -320,7 +320,7 @@ UNS Bird Dog,Strength,Core,Intermediate,3,3,10,20
 UNS Jumping Jack,Strength,Core,Intermediate,3,3,10,20
 Ab wheel roll-out,Strength,Core,Intermediate,3,3,10,20
 Bench mountain climber,Strength,Core,Intermediate,3,3,10,20
-Feet-elevated bench side plank,Strength,Core,Intermediate,1,0,30,60
+Feet-elevated bench side plank,Strength,Core,Intermediate,1,1,30,60
 Cross-body sit-up,Strength,Core,Intermediate,3,3,10,20
 Decline kayak,Strength,Core,Intermediate,3,3,10,20
 30 Decline Reverse Crunch,Strength,Core,Intermediate,3,3,10,20
@@ -350,59 +350,59 @@ Tyler Holt V-Up,Strength,Core,Intermediate,3,3,10,20
 Tyler Holt Plank,Strength,Core,Intermediate,3,3,10,20
 Tyler Holt Hip-Dip,Strength,Core,Intermediate,3,3,10,20
 Suicides,Strength,Core,Intermediate,3,3,10,20
-Holman Towel Straight Plank Jack,Strength,Core,Intermediate,1,0,30,60
+Holman Towel Straight Plank Jack,Strength,Core,Intermediate,1,1,30,60
 Holman Towel Hill Climber,Strength,Core,Intermediate,3,3,10,20
-Holman Towel Elbow Plank Jack,Strength,Core,Intermediate,1,0,30,60
-Holman Towel Elbow Plank Pike,Strength,Core,Intermediate,1,0,30,60
-Holman Towel Straight Plank Hand Reach,Strength,Core,Intermediate,1,0,30,60
+Holman Towel Elbow Plank Jack,Strength,Core,Intermediate,1,1,30,60
+Holman Towel Elbow Plank Pike,Strength,Core,Intermediate,1,1,30,60
+Holman Towel Straight Plank Hand Reach,Strength,Core,Intermediate,1,1,30,60
 Holman Towel Wax-On Wax-Off,Strength,Core,Intermediate,3,3,10,20
 Holman Towel Wide Hill Climber,Strength,Core,Intermediate,3,3,10,20
-Holman Towel Dirty Dog,Strength,Core,Intermediate,1,0,30,60
-Holman Straight Plank Shoulder Tap,Strength,Core,Intermediate,1,0,30,60
-Holman Killer Abs,Strength,Core,Intermediate,1,0,30,60
-Holman Straight Plank Split Jack,Strength,Core,Intermediate,1,0,30,60
-Holman Elbow Plank Swim,Strength,Core,Intermediate,1,0,30,60
-Holman Elbow Plank Saw,Strength,Core,Intermediate,1,0,30,60
+Holman Towel Dirty Dog,Strength,Core,Intermediate,1,1,30,60
+Holman Straight Plank Shoulder Tap,Strength,Core,Intermediate,1,1,30,60
+Holman Killer Abs,Strength,Core,Intermediate,1,1,30,60
+Holman Straight Plank Split Jack,Strength,Core,Intermediate,1,1,30,60
+Holman Elbow Plank Swim,Strength,Core,Intermediate,1,1,30,60
+Holman Elbow Plank Saw,Strength,Core,Intermediate,1,1,30,60
 Holman Feet-Elevated Straight Plank Toe-Tap Series,Strength,Core,Intermediate,3,3,10,20
-Holman Elbow Plank Pike Pull,Strength,Core,Intermediate,1,0,30,60
+Holman Elbow Plank Pike Pull,Strength,Core,Intermediate,1,1,30,60
 Holman Hand-Elevated Walk-Over Push-Up,Strength,Core,Intermediate,3,3,10,20
 Holman Hands-Elevated Hill Climber,Strength,Core,Intermediate,3,3,10,20
-Holman Seated Pike,Strength,Core,Intermediate,1,0,30,60
-Holman Feet-Elevated Up-Down Plank,Strength,Core,Intermediate,1,0,30,60
+Holman Seated Pike,Strength,Core,Intermediate,1,1,30,60
+Holman Feet-Elevated Up-Down Plank,Strength,Core,Intermediate,1,1,30,60
 Holman Feet-Elevated Hand Tap,Strength,Core,Intermediate,3,3,10,20
-Holman Reverse Straight Plank with Alternating Heel Pull-In,Strength,Core,Intermediate,1,0,30,60
-Holman Elbow Plank,Strength,Core,Intermediate,1,0,30,60
-Holman Straight Plank Squat Thrust,Strength,Core,Intermediate,1,0,30,60
-Holman Alternating Single-Leg Pike,Strength,Core,Intermediate,1,0,30,60
+Holman Reverse Straight Plank with Alternating Heel Pull-In,Strength,Core,Intermediate,1,1,30,60
+Holman Elbow Plank,Strength,Core,Intermediate,1,1,30,60
+Holman Straight Plank Squat Thrust,Strength,Core,Intermediate,1,1,30,60
+Holman Alternating Single-Leg Pike,Strength,Core,Intermediate,1,1,30,60
 Holman Knee Pull-In Crunch,Strength,Core,Intermediate,3,3,10,20
-Holman Straight Plank with Hand Tap,Strength,Core,Intermediate,1,0,30,60
-Holman Straight Plank with Dirty Dog,Strength,Core,Intermediate,1,0,30,60
-Holman Elbow Plank Roll,Strength,Core,Intermediate,1,0,30,60
+Holman Straight Plank with Hand Tap,Strength,Core,Intermediate,1,1,30,60
+Holman Straight Plank with Dirty Dog,Strength,Core,Intermediate,1,1,30,60
+Holman Elbow Plank Roll,Strength,Core,Intermediate,1,1,30,60
 Holman Froggy Push-Up,Strength,Core,Intermediate,3,3,10,20
-Holman Straight Plank Hand Tap to Shoulder Tap,Strength,Core,Intermediate,1,0,30,60
-Holman In-Out Straight Plank,Strength,Core,Intermediate,1,0,30,60
+Holman Straight Plank Hand Tap to Shoulder Tap,Strength,Core,Intermediate,1,1,30,60
+Holman In-Out Straight Plank,Strength,Core,Intermediate,1,1,30,60
 Holman Bicycle,Strength,Core,Intermediate,3,3,10,20
 Holman Alternating Diagonal Knee Pull-in,Strength,Core,Intermediate,3,3,10,20
-Holman Elbow Plank with Step-Out,Strength,Core,Intermediate,1,0,30,60
+Holman Elbow Plank with Step-Out,Strength,Core,Intermediate,1,1,30,60
 Holman Alternating Slow L-Raise,Strength,Core,Intermediate,3,3,10,20
-Holman Feet-Elevated Plank with Shoulder Tap,Strength,Core,Intermediate,1,0,30,60
-Holman Feet-Elevated Inchworm Pike to Straight Plank Push-Up,Strength,Core,Intermediate,1,0,30,60
-Holman Feet-Elevated Up-Down Elbow Plank,Strength,Core,Intermediate,1,0,30,60
-Holman Feet-Elevated Plank Pike Pull,Strength,Core,Intermediate,1,0,30,60
+Holman Feet-Elevated Plank with Shoulder Tap,Strength,Core,Intermediate,1,1,30,60
+Holman Feet-Elevated Inchworm Pike to Straight Plank Push-Up,Strength,Core,Intermediate,1,1,30,60
+Holman Feet-Elevated Up-Down Elbow Plank,Strength,Core,Intermediate,1,1,30,60
+Holman Feet-Elevated Plank Pike Pull,Strength,Core,Intermediate,1,1,30,60
 Holman Feet-Elevated Alternating Single-Leg Hip Raise,Strength,Core,Intermediate,3,3,10,20
 Holman Feet-Elevated Plank Pike Pull to Push-Up,Strength,Core,Intermediate,3,3,10,20
 Holman Standing Heel Click,Strength,Core,Intermediate,3,3,10,20
-Holman Straight Plank Right-Left Jack to Split Jack,Strength,Core,Intermediate,1,0,30,60
-Holman Elbow Plank Jack to Ninja Knees,Strength,Core,Intermediate,1,0,30,60
-Holman Right Side Elbow Plank with Left Leg Swing,Strength,Core,Intermediate,1,0,30,60
-Holman Left Side Elbow Plank with Right Leg Swing,Strength,Core,Intermediate,1,0,30,60
-Holman Straight Plank with Alternating Diagonal Sit-Back,Strength,Core,Intermediate,1,0,30,60
+Holman Straight Plank Right-Left Jack to Split Jack,Strength,Core,Intermediate,1,1,30,60
+Holman Elbow Plank Jack to Ninja Knees,Strength,Core,Intermediate,1,1,30,60
+Holman Right Side Elbow Plank with Left Leg Swing,Strength,Core,Intermediate,1,1,30,60
+Holman Left Side Elbow Plank with Right Leg Swing,Strength,Core,Intermediate,1,1,30,60
+Holman Straight Plank with Alternating Diagonal Sit-Back,Strength,Core,Intermediate,1,1,30,60
 Holman Boat Press with Leg Extension,Strength,Core,Intermediate,3,3,10,20
 Holman Shoulder Tap to Dirty Dog,Strength,Core,Intermediate,3,3,10,20
 Holman Standing Russian Twist,Strength,Core,Intermediate,3,3,10,20
-Holman Hovering Plank with Shoulder Tap,Strength,Core,Intermediate,1,0,30,60
-Holman Elbow Plank to Stacked Plank Hip Drop,Strength,Core,Intermediate,1,0,30,60
-Holman Elbow Plank to Walk-Up Pike,Strength,Core,Intermediate,1,0,30,60
+Holman Hovering Plank with Shoulder Tap,Strength,Core,Intermediate,1,1,30,60
+Holman Elbow Plank to Stacked Plank Hip Drop,Strength,Core,Intermediate,1,1,30,60
+Holman Elbow Plank to Walk-Up Pike,Strength,Core,Intermediate,1,1,30,60
 Holman Hill Climber,Strength,Core,Intermediate,3,3,10,20
 Holman Straight Plank Pike to Renegade Row,Strength,Core,Intermediate,3,3,10,20
 Holman Alternating Hip Drop to Push-Up,Strength,Core,Intermediate,3,3,10,20
@@ -412,22 +412,22 @@ Holman Alternating Crab Reach,Strength,Core,Intermediate,3,3,10,20
 Holman Hovering Panther Core Stabilizer,Strength,Core,Intermediate,3,3,10,20
 Holman Burpee to Forward Lunge,Strength,Core,Intermediate,3,3,10,20
 Holman Seated Knee Pull-In Series,Strength,Core,Intermediate,3,3,10,20
-Holman Elbow Plank Pike,Strength,Core,Intermediate,1,0,30,60
-Holman Elbow Plank Jack to Straight Plank Split Jack,Strength,Core,Intermediate,1,0,30,60
+Holman Elbow Plank Pike,Strength,Core,Intermediate,1,1,30,60
+Holman Elbow Plank Jack to Straight Plank Split Jack,Strength,Core,Intermediate,1,1,30,60
 Holman Boat Pull-Over,Strength,Core,Intermediate,3,3,10,20
 Holman Squat Pulse to Plyometric Jump,Strength,Core,Intermediate,3,3,10,20
 Holman Hands Down Heel Click,Strength,Core,Intermediate,3,3,10,20
 Holman Straight Plank to Kick-Up,Strength,Core,Intermediate,3,3,10,20
 Holman Hands-Elevated Split Jack,Strength,Core,Intermediate,3,3,10,20
-Holman Feet-Elevated Plank Reach,Strength,Core,Intermediate,1,0,30,60
-Holman Hand-Elevated Side Plank Semicircle,Strength,Core,Intermediate,1,0,30,60
-Holman Hands-Elevated Straight Plank Pike,Strength,Core,Intermediate,1,0,30,60
-Holman Alternating Rolling Elbow Plank,Strength,Core,Intermediate,1,0,30,60
-Holman Elbow Plank Jack,Strength,Core,Intermediate,1,0,30,60
+Holman Feet-Elevated Plank Reach,Strength,Core,Intermediate,1,1,30,60
+Holman Hand-Elevated Side Plank Semicircle,Strength,Core,Intermediate,1,1,30,60
+Holman Hands-Elevated Straight Plank Pike,Strength,Core,Intermediate,1,1,30,60
+Holman Alternating Rolling Elbow Plank,Strength,Core,Intermediate,1,1,30,60
+Holman Elbow Plank Jack,Strength,Core,Intermediate,1,1,30,60
 Holman Squat Thrust to Alternating Knee-In,Strength,Core,Intermediate,3,3,10,20
-Holman Supine Double Pike,Strength,Core,Intermediate,1,0,30,60
-Holman Elbow Plank Alternating Pike,Strength,Core,Intermediate,1,0,30,60
-Holman Seated Killer Abs,Strength,Core,Intermediate,1,0,30,60
+Holman Supine Double Pike,Strength,Core,Intermediate,1,1,30,60
+Holman Elbow Plank Alternating Pike,Strength,Core,Intermediate,1,1,30,60
+Holman Seated Killer Abs,Strength,Core,Intermediate,1,1,30,60
 Holman Side Plank Hip Drop,Strength,Core,Intermediate,3,3,10,20
 Holman Wide Hill Climber,Strength,Core,Intermediate,3,3,10,20
 Holman Straight-Legged Bicycle,Strength,Core,Intermediate,3,3,10,20
@@ -456,14 +456,14 @@ Holman Right Leg 7-Up Crunch,Strength,Core,Intermediate,3,3,10,20
 Holman Left Leg 7-Up Crunch,Strength,Core,Intermediate,3,3,10,20
 Holman Straight Plank Jack,Strength,Core,Intermediate,3,3,10,20
 Holman Feet-Elevated Couch Hill Climber,Strength,Core,Intermediate,3,3,10,20
-Holman Feet-Elevated Right Side Plank,Strength,Core,Intermediate,1,0,30,60
+Holman Feet-Elevated Right Side Plank,Strength,Core,Intermediate,1,1,30,60
 Holman Alternating Up-Down Plank to Push-Up,Strength,Core,Intermediate,3,3,10,20
-Holman Straight Plank Pike,Strength,Core,Intermediate,1,0,30,60
-Holman Ninja Knee Straight Plank,Strength,Core,Intermediate,1,0,30,60
+Holman Straight Plank Pike,Strength,Core,Intermediate,1,1,30,60
+Holman Ninja Knee Straight Plank,Strength,Core,Intermediate,1,1,30,60
 Holman Reverse Crunch to Hip Raise,Strength,Core,Intermediate,3,3,10,20
 Holman Straight Plank Quick Reach,Strength,Core,Intermediate,3,3,10,20
 Holman Alternating Diagonal Straight Plank,Strength,Core,Intermediate,3,3,10,20
-Holman Feet-Elevated Left Side Plank,Strength,Core,Intermediate,1,0,30,60
+Holman Feet-Elevated Left Side Plank,Strength,Core,Intermediate,1,1,30,60
 Holman Right Hand Left Foot Crab Reach,Strength,Core,Intermediate,3,3,10,20
 Holman Low-Impact Crab Kick,Strength,Core,Intermediate,3,3,10,20
 Holman Alternating Crab Flip to Froggy Push-Up,Strength,Core,Intermediate,3,3,10,20
@@ -493,11 +493,11 @@ Alternating sit-through with crunch-,Strength,Core,Intermediate,3,3,10,20
 MetaBurn Alternating Toe-Touch,Strength,Core,Intermediate,3,3,10,20
 MetaBurn Janda Sit-Up,Strength,Core,Intermediate,3,3,10,20
 MetaBurn Oblique Roll Crunch,Strength,Core,Intermediate,3,3,10,20
-MetaBurn Plank Jack,Strength,Core,Intermediate,1,0,30,60
-MetaBurn Plank To Alternating Side Plank,Strength,Core,Intermediate,1,0,30,60
-MetaBurn Plank Up-Down,Strength,Core,Intermediate,1,0,30,60
-MetaBurn Plank Wiper,Strength,Core,Intermediate,1,0,30,60
-MetaBurn Plank With Alternating Toe-Touch,Strength,Core,Intermediate,1,0,30,60
+MetaBurn Plank Jack,Strength,Core,Intermediate,1,1,30,60
+MetaBurn Plank To Alternating Side Plank,Strength,Core,Intermediate,1,1,30,60
+MetaBurn Plank Up-Down,Strength,Core,Intermediate,1,1,30,60
+MetaBurn Plank Wiper,Strength,Core,Intermediate,1,1,30,60
+MetaBurn Plank With Alternating Toe-Touch,Strength,Core,Intermediate,1,1,30,60
 MetaBurn Plyo Push-Up,Strength,Core,Intermediate,3,3,10,20
 MetaBurn Psycho Crunch,Strength,Core,Intermediate,3,3,10,20
 MetaBurn Scapular Retraction Plank,Strength,Core,Intermediate,3,3,10,20
@@ -521,12 +521,12 @@ FYR2 Fire Feet with Burpee Tuck Jump Drill,Strength,Core,Intermediate,3,3,10,20
 FYR2 Flutter Kick,Strength,Core,Intermediate,3,3,10,20
 FYR2 Half-Moon,Strength,Core,Intermediate,3,3,10,20
 FYR2 Leopard Crawl,Strength,Core,Intermediate,3,3,10,20
-FYR2 Plank Alternating Front Step,Strength,Core,Intermediate,1,0,30,60
+FYR2 Plank Alternating Front Step,Strength,Core,Intermediate,1,1,30,60
 FYR2 Shoulder Tap,Strength,Core,Intermediate,3,3,10,20
 Hand shift plank,Strength,Core,Intermediate,3,3,10,20
 Cross-body plank march,Strength,Core,Intermediate,3,3,10,20
 Bent-knee Copenhagen hip adduction,Strength,Core,Intermediate,3,3,10,20
-Copenhagen plank,Strength,Core,Intermediate,1,0,30,60
+Copenhagen plank,Strength,Core,Intermediate,1,1,30,60
 ACFT Hanging leg tuck,Strength,Core,Intermediate,3,3,10,20
 Alternating hanging knee raise,Strength,Core,Intermediate,3,3,10,20
 Plank To Sphinx,Strength,Core,Intermediate,3,3,10,20

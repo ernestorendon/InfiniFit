@@ -7,9 +7,9 @@ const CreateRoutine = () => {
   const [csvData, setCsvData] = useState([]);
   const [selectedFocusArea, setSelectedFocusArea] = useState('');
   const [selectedExercise, setSelectedExercise] = useState('');
+  const [routineName, setRoutineName] = useState(''); // State to hold the editable routine name
   const [exercises, setExercises] = useState([]);
   const navigate = useNavigate();
-  const routineName = 'new_routine';
 
   useEffect(() => {
     fetch('megaGymDataset.csv')
@@ -40,10 +40,41 @@ const CreateRoutine = () => {
     }
   };
 
-  const handleContinue = () => {
-    console.log('Routine not saved:', { routineName, exercises });
-    navigate(`/${routineName}/edit`);
-  };
+const userJson = localStorage.getItem('user');
+const userObj = JSON.parse(userJson);
+const userEmail = userObj.email;
+const handleContinue = () => {
+  if (!routineName) {
+    alert('Please enter a routine name.');
+    return;
+  }
+
+  const postUrl = 'http://127.0.0.1:5000/add_routine'; // Replace with your actual backend endpoint
+
+  fetch(postUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      routineName: routineName,
+      exercises: exercises,
+      userEmail: userEmail // Replace with actual user email
+    }),
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log('Routine saved:', data);
+    navigate(`/${userEmail}${routineName}/edit`);
+  })
+  .catch(error => console.error('Error:', error));
+};
+
 
   const uniqueFocusAreas = Array.from(new Set(csvData.map(row => row[2]))).filter(Boolean);
 
@@ -52,6 +83,14 @@ const CreateRoutine = () => {
       <Navbar />
       <div className="routine-creator">
         <h2>New Routine</h2>
+        <input
+          className="routine-name-input" // Apply the new class here
+          type="text"
+          value={routineName}
+          onChange={(e) => setRoutineName(e.target.value)}
+          placeholder="Edit Routine Name"
+          required // Make this field required
+        />
         <div className="dropdown-menus">
           <select
             className="dropdown-menu"

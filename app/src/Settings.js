@@ -1,21 +1,27 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import './Settings.css';
+import {useNavigate} from "react-router-dom";
+
 
 const Settings = () => {
   // States to manage display and edit modes
   const [editMode, setEditMode] = useState({
     fitnessLevel: false,
     focusArea: false,
-    workoutTime: false
+    workoutDuration: false
   });
-
+  const userJson = localStorage.getItem('user');
+  const userObj = JSON.parse(userJson);
+  const userEmail = userObj.email;
   // Placeholder state for user settings
   const [userSettings, setUserSettings] = useState({
+    userEmail: userEmail,
     fitnessLevel: '(current fitness level)',
     focusArea: '(current focus area)',
-    workoutTime: '(current workout duration)'
+    workoutDuration: '(current workout duration)'
   });
+  const navigate = useNavigate();
 
   // Handle edit mode toggle
   const toggleEdit = (field) => {
@@ -31,6 +37,30 @@ const Settings = () => {
   // Handle exiting edit mode when clicking outside
   const handleBlur = (e) => {
     toggleEdit(e.target.name);
+  };
+  const handleUpdateSettings = () => {
+    const updateUrl = 'http://127.0.0.1:5000/update_settings'; // Replace with your actual backend endpoint
+
+    fetch(updateUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userSettings),
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Settings updated:', data);
+      // Additional actions after successful update (e.g., notification to user)
+      navigate('/'); // Navigate to home page after successful update
+
+    })
+    .catch(error => console.error('Error:', error));
   };
 
   return (
@@ -92,21 +122,25 @@ const Settings = () => {
 
         {/* Workout Time */}
         <div className="setting-item">
-          {editMode.workoutTime ? (
+          {editMode.workoutDuration ? (
             <input
-              type="text"
-              name="workoutTime"
-              value={userSettings.workoutTime}
+              type="number"
+              name="workoutDuration"
+              value={userSettings.workoutDuration}
               onChange={handleChange}
               onBlur={handleBlur}
               autoFocus
             />
           ) : (
-            <p onClick={() => toggleEdit('workoutTime')}>{userSettings.workoutTime}</p>
+            <p onClick={() => toggleEdit('workoutDuration')}>{userSettings.workoutDuration}</p>
           )}
         </div>
 
       </section>
+    <button onClick={handleUpdateSettings} className="save-settings-button">
+      Save Changes
+    </button>
+
     </div>
   );
 };

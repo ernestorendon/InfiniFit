@@ -1,5 +1,4 @@
 from db_setup import db
-from security import hash_password, verify_password
 
 
 class UserAccount(db.Model):
@@ -14,13 +13,12 @@ class UserAccount(db.Model):
     focusArea = db.Column(db.String(100), nullable=False)
 
 
-class Workout(db.Model):
+class Workouts(db.Model):
     __tablename__ = 'workouts'
-    email = db.Column(db.String(100), nullable=False)
-    id = db.Column(db.Integer, nullable=False, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
-    sets = db.Column(db.Integer, nullable=False)
-    reps = db.Column(db.Integer, nullable=False)
+    email = db.Column(db.String, nullable=False)
+    id = db.Column(db.String, primary_key=True)
+    json_routine = db.Column(db.JSON, nullable=False)
+
 
 securityQuestions = {
     1: "What city were you born in?",

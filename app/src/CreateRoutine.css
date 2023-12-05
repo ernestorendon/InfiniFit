@@ -15,6 +15,14 @@
   border-radius: 5px;
 }
 
+.routine-name-input {
+  padding: 10px;
+  margin: 10px 0;
+  width: 80%; /* Same as dropdown-menu for consistent width */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
 .dropdown-menus {
   display: flex;
   justify-content: center;
