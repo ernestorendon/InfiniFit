@@ -5,12 +5,13 @@
 
 .setting-item p, .setting-item select, .setting-item input {
   padding: 10px;
-  margin: 5px 0;
+  margin: 0 auto;
   border: 1px solid #ccc;
   border-radius: 3px;
   background-color: white;
   box-sizing: border-box;
   color: #333;
+  width: 300px;
 }
 
 .setting-item select, .setting-item input {
