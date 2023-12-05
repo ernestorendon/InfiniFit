@@ -74,8 +74,12 @@ const LoginScreen = () => {
   return (
 
     <div className="home-container">
-      <Navbar />
-
+      <header className="header">
+        <a href="/" style={{ textDecoration: 'none' }}>
+         <h1 className="welcome-text">InfiniFit</h1>
+        </a>
+        {/* Other header elements like menu if needed */}
+      </header>
     <div className="registration-form">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
