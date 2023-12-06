@@ -1,3 +1,4 @@
+from flask_wtf.csrf import CSRFProtect
 from flask import Flask
 from flask_cors import CORS
 from db_setup import db
@@ -6,6 +7,7 @@ from tables import Workouts
 
 
 app = Flask(__name__)
+csrf = CSRFProtect(app)
 
 # Replace the following with your actual database connection info
 username = 'username'
